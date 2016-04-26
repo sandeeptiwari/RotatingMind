@@ -24,3 +24,12 @@ Solution :- Opene FindOrderOfString.java class and just run it and you can also 
  Solution:- Open BubbleSort.java class and simply run it and for better concept see below video.
  
   https://www.youtube.com/watch?v=lyZQPjUT5B4
+  
+  # 3.
+   Longest Palindromic Substring (Java).
+   Example:-
+           input String s = "HYTBCABADEFGHABCDEDCBAGHTFYW1234567887654321ZWETYGDE". 
+           output String  =  "1234567887654321".
+   Solution:- Open LongestPalindrom.java class and run it Or see below link
+   
+    http://stackoverflow.com/questions/1115001/write-a-function-that-returns-the-longest-palindrome-in-a-given-string
