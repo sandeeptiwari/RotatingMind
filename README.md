@@ -1,7 +1,6 @@
-# RotatingMind
-lets play with code
+# RotatingMind( lets play with code)
 
-#  1->
+#  1.
 
 Given two strings, find if first string is a subsequence of second
 Given two strings str1 and str2, find if str1 is a subsequence of str2. A subsequence is a sequence that can be derived from another sequence by deleting some elements without changing the order of the remaining elements (source: wiki). Expected time complexity is linear.
