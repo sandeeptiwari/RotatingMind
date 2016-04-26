@@ -21,9 +21,7 @@ Solution :- Opene FindOrderOfString.java class and just run it and you can also 
 # 2.
  Bubble Sort example {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 38}
  
- Solution:- Open BubbleSort.java class and simply run it and for better concept see below video.
- 
-  https://www.youtube.com/watch?v=lyZQPjUT5B4 .
+ Solution:- Open BubbleSort.java class and simply run it and for better concept see below video. https://www.youtube.com/watch?v=lyZQPjUT5B4 .
   
   # 3.
   
