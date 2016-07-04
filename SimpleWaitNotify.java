@@ -69,6 +69,6 @@ public class SimpleWaitNotify implements Runnable{
 		SimpleWaitNotify.value = false;
 		SimpleWaitNotify sNotify = new SimpleWaitNotify();
 		pool.execute(sNotify);
-		//pool.shutdown();
+		pool.shutdown();
 	}
 }
