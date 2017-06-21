@@ -1,0 +1,33 @@
+Server:-(S)
+      1- A interface with required methods.
+	  2- A class for implementation of above interface.
+	     extends unicastremote class
+	  3- a class with for binding service
+
+Client :-(C)
+	   1- A class which can access the object of b class.
+	      and can invoke the function of remote object.
+		2- registry file auto generated file
+		  
+Stub and Skeleton:-
+	- stub is located at C, looking for unique name in registry.
+	- stub is responsible to search server's methods.
+	- 
+	
+	- The server side object participating in distributed object 
+	  communication is known as a skelton.
+	- A skelton acts as gateway for server side objects and all 
+	  incoming clientsrequests are routed through it. The skelton
+	  wraps server object functionality and eposes it to the clients
+	  ,moreover by adding the network logic ensures the reliable
+	   communication channel between clients and server.
+	   Skeleton can e written up manually or generated automatically
+	   depending on chosen communication protocol.
+	- Traslating incoming data from the stub to the correct up-calls server
+	   objects.
+	-unmarshalling of the arguments from received data.
+	-passing arguments to server object.
+	-marshalling of the return values from server objects.
+	- passing values back to he client stub over the network.
+	- Skeleton is binding with unique name from registry.
+	- skelton resides at server side
