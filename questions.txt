@@ -1,0 +1,239 @@
+Q.1- If three thread t1, t2, t3 are running at a time how to make sure thread t3 end at last 
+   after completion of t1 t2.
+	ANS.-
+	
+	Your proposed code won't work. t3 could finish before t2 even starts. 
+	To guarantee they run in sequence, you need to to this:
+
+	final Thread t3 = new Thread(new T3()); // assume T3 is a Runnable
+	final Thread t2 = new Thread(new T2());
+	final Thread t1 = new Thread(new T1());
+
+	t1.start();
+	t1.join();
+	t2.start();
+	t2.join();
+	t3.start();
+	But then using multiple threads is pointless and wasteful. You would achieve 
+	the same effect with a single thread:
+
+	new T1().run();
+	new T2().run();
+	new T3().run();
+	
+	
+Q.2- Since run method does not throw exception how to log checked exception occurred 
+   while executing a thread?
+
+Ans.
+1-  Thread.UncaughtExceptionHandler h = new Thread.UncaughtExceptionHandler() {
+    public void uncaughtException(Thread th, Throwable ex) {
+        System.out.println("Uncaught exception: " + ex);
+    }
+};
+Thread t = new Thread() {
+    public void run() {
+        System.out.println("Sleeping ...");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.println("Interrupted.");
+        }
+        System.out.println("Throwing exception ...");
+        throw new RuntimeException();
+    }
+};
+t.setUncaughtExceptionHandler(h);
+t.start();
+
+2- 
+	public class ThingRunnable implements Runnable {
+    private SomeListenerType listener;
+    // assign listener somewhere
+
+    public void run() {
+        try {
+            while(iHaveMorePackets()) { 
+                doStuffWithPacket();
+            }
+        } catch(Exception e) {
+            listener.notifyThatDarnedExceptionHappened(...);
+        }
+    }
+ }
+
+
+Q.3- Sorting arrays, objects, looping over an array of objects, etc OOJS in depth.
+
+Q.4-Design a Hotel Reservation System using OOPS, project worked on experience in REST, 
+//Simple OOPs concepts. Inheritance polymorphism Onsite:
+Ans;- 
+	class Hotel {
+    private String name, address;
+    private List<Room> roomList;   //key : roomNumber
+    public Hotel(){
+        roomList = new ArrayList<Room>();
+    }
+    public Reservation bookRoomForDates(List<Integer> dateList, Guest guest){
+        for(Room room : roomList){
+            Reservation reservation = room.bookForGivenDates(dateList, guest);
+            if(reserved != null) return reservation; //Reservation successFull!
+        }
+        return null; //Reservation failed!
+    }
+}
+class Reservation {
+    private String id;
+    private Date inDate, outDate;
+    private Guest guest;
+
+    public Reservation(Room room, int startDate, int endDate, Guest guest){
+        //populate the member variables.
+    }
+}
+
+class Room {
+    private String id;
+    private int roomNumber, floorNum;
+    private Map<Integer, Reservation> reservedDates;  // key : date as Integer (YYYYMMDD)
+
+    public Room(int roomNumber){
+        reservedDates = new HashMap<Integer, Reservation>();
+        this.roomNumber = roomNumber;
+    }
+
+    //A guest request for booking on dates(in YYYYMMDD format) in the dateList
+    public Reservation bookForGivenDates(List<Integer> dateList, Guest guest)  
+    {   
+        if(dateList.isEmpty()) return null;
+
+        for(Integer date : dateList){
+            Reservation res = reservedDates.get(date);  
+            if(res != null) {  // We don't store null value for unreserved dates for the room.
+                return null;  // Room is reserved on this date by another guest. So, this room is unavailable.
+            }
+        }
+        //this room is unreserved on all requested dates. So go on and reserve this room for asked dates
+        int startDate = dateList.get(0);
+        int endDate   = dateList.get(dateList.size() - 1);
+
+        Reservation newReservation = new Reservation(this, startDate, endDate, guest);
+        for(Integer date : dateList){
+            reservedDates.put(date, newReservation);
+        }
+        return newReservation;
+    }
+}
+
+
+
+
+Q-5:- 3 ants are sitting on an equilateral triangles corner and   start moving randomly so what is the probability of them meeting? 
+ans- 9, 6 == 6/9 = 2/3.
+
+Q- 6: Write bubble sort algorithm and compare it with binary search ?
+Ans:-
+	for(int index = 0; index < len; index++){
+			
+			for(int jIndex = index + 1; jIndex < len; jIndex++){
+				
+				if(input[index] > input[jIndex]){
+					temp = input[jIndex];
+					input[jIndex] = input[index];
+					input[index] = temp;
+				}
+			}
+		}
+		
+Q 1. Difference between inner and outer join?
+Ans. Inner join - An inner join using either of the equivalent queries gives the intersection 
+of the two tables, i.e. the two rows they have in common.
+Left outer join - A left outer join will give all rows in A, plus any common rows in B.
+Full outer join - A full outer join will give you the union of A and B, i.e. 
+All the rows in A and all the rows in B. If something 
+in A doesn't have a corresponding datum in B, then the B portion is null, and vice versa. 
+
+Q. 2. Detect loop in linked list?
+Ans.
+	boolean hasLoop(Node first) {
+    Node slow = first;
+    Node fast = first;
+
+    while(fast != null && fast.next != null) {
+        slow = slow.next;          // 1 hop
+        fast = fast.next.next;     // 2 hops 
+
+        if(slow == fast)  // fast caught up to slow, so there is a loop
+            return true;
+    }
+    return false;  // fast reached null, so the list terminates
+}
+
+3. 2 candles 45 mins problem.
+4. What do you know about this company
+5. What do you know about stock markets. 
+
+1. Explain Aggregation, composition, abstraction.
+
+2. When will aggregation used and composition.
+
+3. Explain encapsulation.
+
+4. Explain Loose coupling and tight coupling.
+
+5. How to achieve Loose coupling.
+
+6. Open and closed system...!! (Forgot question)
+
+7. What is Enum ? can we extend enum from another.
+
+8. Decorator design pattern. When to use decorator design pattern.
+
+9. Singleton design pattern. Performance impact of lazy initialization.
+
+10. Explain cloneble and serializable.  
+
+Q. Complete core java, design patterns, JMS, Web services,
+ - multi threading
+- concurrency
+- serialization
+- inner classes
+- JMM
+- Garbage collection
+- JMS
+- Rest and soap web service difference
+- discussion on the coding exercise
+- Junit cases for coding exercise
+Q. Spring and hibernate (optional)  
+Different Java GC algorithms  
+
+Thread pool, Bean life cycle, Concurrent API's, 
+Locks, Producer consumer Problem, Linked list implementation, 
+Hashmap and Treemap Implementation, Exception Handling, 
+Servlet life cycle, Internal working of Garbage collectors etc  
+
+swap two variables without using third variable.  
+
+why use locks instead of synchronization?
+How to stop a thread?
+Executor service ?
+rules of overriding?
+How to serialize singleton?  
+
+Cutting a cake in 8 parts in 3 cuts
+
+make a pattern 1 12 123 1234 12345 without using loop
+
+
+Java: Given a set of strings of full names(first, middle and last name), 
+write a code to print the names as, 
+only first letter of first and middle name and whole last name.
+
+Online Cab booking system
+
+solid design principles, concurrent packages, garbage collection algorithms, design patterns, collections, etc 
+
+Write a program to demonstrate object oriented programming concepts?
+
+How do you reverse a linked list using one node?
+Describe software life cycle?  

@@ -8,7 +8,7 @@ class YieldThread extends Thread{
 	
 	   for(int i = 0; i< 10; i++){
 		   System.out.println("Child Thread");
-		   
+		   Thread.yield();
 	   }
    }
 }
@@ -17,12 +17,12 @@ public class YieldThreadDemo{
  
   public static void main(String[] args){
 	YieldThread t = new YieldThread();
-	t.mainThread = Thread.currentThread();
+	//t.mainThread = Thread.currentThread();
 	t.start();
 	
-	try{
-		t.join();
-	}catch(InterruptedException ie){}
+	//try{
+		//t.join();
+	//}catch(InterruptedException ie){}
 	
 	for(int i = 0; i< 10; i++){
 		   System.out.println("Main Thread");

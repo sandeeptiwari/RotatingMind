@@ -55,6 +55,14 @@ public class Solution {
         
         return arrayLeftRotation(arr, n, k);
     }
+	
+	public int[] rotateArray(int[] a, int n, int k){
+		
+		while(k < ){
+			
+		}
+		
+	}
     
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);

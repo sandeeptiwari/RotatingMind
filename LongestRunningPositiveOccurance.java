@@ -2,7 +2,7 @@
 
 public class LongestRunningPositiveOccurance{
 	
-	public int[] maxOccurancePositiveNumber(int arr[]){
+	public int maxOccurancePositiveNumber(int arr[]){
 		 int result[] = new int[2];
 		 int len  = arr.length;
 		 int max = 0, min = 0;
@@ -29,8 +29,8 @@ public class LongestRunningPositiveOccurance{
 					 result[1] = (len - max);
 				 }
 			
-			result[0] = max;
-		 return result;
+				result[0] = max;
+		 return max;
 	}
 	
 	public static void main(String...args){

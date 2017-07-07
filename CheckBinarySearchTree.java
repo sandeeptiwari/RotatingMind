@@ -6,24 +6,24 @@ public class CheckBinarySearchTree{
 	
 	public static void main(String args[]){
 		CheckBinarySearchTree bst = new CheckBinarySearchTree();
-		Node root = new Node(30);
-		root.left = 5;
-		root.right = 40;
-		root.right.left = 10;
-		root.right.right = 50;
+		Node root = new Node(15);
+		root.left = new Node(10);
+		root.right = new Node(20);
+		root.right.left = new Node(17);
+		root.right.right = new Node(25);
 		
 		boolean isBst = bst.isBst(root);
 		System.out.println("Tree is BST "+isBst);
 	}
 	
 	public boolean isBst(Node root){
-		return isValid(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+		return isValidBst(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
 	}
 	
 	public boolean isValidBst(Node root, int min, int max){
 		if(root == null)
 			return true;
-		if(root.left > min && root.right < max 
+		if(root.data > min && root.data < max 
 				&& isValidBst(root.left, min, root.data)
 				&& isValidBst(root.right, root.data, max)){
 			return true;	
