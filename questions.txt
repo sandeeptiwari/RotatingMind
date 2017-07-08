@@ -169,27 +169,98 @@ Ans.
     return false;  // fast reached null, so the list terminates
 }
 
-3. 2 candles 45 mins problem.
-4. What do you know about this company
-5. What do you know about stock markets. 
+Q.3. 2 candles 45 mins problem?
+ Ans:- burn 1st both side and second from one end aftre 1st completion burn second other end.
 
-1. Explain Aggregation, composition, abstraction.
+
+Q.1. Explain Aggregation, composition, abstraction?
+
+Aggregation and composition are almost completely identical except that composition is used when the life of the child is completely controlled by the parent.
+
+Aggregation
+
+Car -> Tires
+The Tires can be taken off of the Car object and installed on a different one. Also, if the car gets totaled, the tires do not necessarily have to be destroyed.
+
+Composition
+
+Body -> Blood Cell
+When the Body object is destroyed the BloodCells get destroyed with it.
+
+Dependency
+
+A relationship between two objects where changing one may affect the other.
 
 2. When will aggregation used and composition.
 
 3. Explain encapsulation.
+Abstraction :-  is a process where you show only “relevant” data and “hide” unnecessary 
+details of an object from the user. Consider your mobile phone, you just need to know what 
+buttons are to be pressed to send a message or make a call, What happens when you press a button, 
+how your messages are sent, how your calls are connected is all abstracted away from the user.
 
-4. Explain Loose coupling and tight coupling.
+Encapsulation :- is the process of combining data and functions into a single unit 
+called class. In Encapsulation, the data is not accessed directly; 
+it is accessed through the functions present inside the class. In simpler words, 
+attributes of the class are kept private and public getter and setter methods are 
+provided to manipulate these attributes. 
+Thus, encapsulation makes the concept of data hiding possible.
 
-5. How to achieve Loose coupling.
 
-6. Open and closed system...!! (Forgot question)
-
-7. What is Enum ? can we extend enum from another.
 
 8. Decorator design pattern. When to use decorator design pattern.
 
+-Decorator design pattern is a pattern which modifies the functionality of an object.
+ In other words it gives different flavours to an object without using inheritance. 
+ You might think why not use inheritance if you are talking about flavours? Well, 
+ yes these are flavours but the permutation and combination of these flavours can be 
+ many and in that case it doesn’t make sense to create a class for each combination.
+
+Lets say you have 6 factors that can change the characteristics of your object, 
+in that case you will have factorial of 
+6 which is, 6! = 720, so there can be 720 objects with different characteristics.
+
 9. Singleton design pattern. Performance impact of lazy initialization.
+Ans.
+	I was doing some research about singletons, specifically regarding lazy vs eager initialization of singletons.
+
+An example of eager initialization:
+
+public class Singleton
+{
+    //initialzed during class loading
+    private static final Singleton INSTANCE = new Singleton();
+
+    //to prevent creating another instance of Singleton
+    private Singleton(){}
+
+    public static Singleton getSingleton(){
+        return INSTANCE;
+    }
+}
+but as shown above that it is eager initialization and thread safety is left to jvm but now,
+ I want to have this same pattern but with lazy initialization.
+
+so I come up with this approach:
+
+public final class Foo {
+    private static class FooLoader {
+        private static final Foo INSTANCE = new Foo();
+    }
+    private Foo() {
+        if (FooLoader.INSTANCE != null) {
+            throw new IllegalStateException("Already instantiated");
+        }
+    }
+    public static Foo getInstance() {
+        return FooLoader.INSTANCE;
+    }
+}
+As shown above Since the line
+
+private static final Foo INSTANCE = new Foo(); 
+is only executed when the class FooLoader is actually used, this takes care of the lazy instantiation, 
+and is it guaranteed to be thread safe.
 
 10. Explain cloneble and serializable.  
 
@@ -205,20 +276,49 @@ Q. Complete core java, design patterns, JMS, Web services,
 - discussion on the coding exercise
 - Junit cases for coding exercise
 Q. Spring and hibernate (optional)  
-Different Java GC algorithms  
+q-Different Java GC algorithms ?
+Ans.
+As of today, there are 4 GC algorithms available in the Java Hotspot VM:
+
+The Serial GC - recommended for client-style applications that do not have low pause time requirements.
+The Parallel GC - use when the throughput matters.
+The Mostly-Concurrent GC (also known as Concurrent Mark-Sweep GC(CMS)) - use when the latency matters.
+The Garbage First GC (G1) - new GC algorithm, for CMS replacement.
+You can find more information about these GC algorithms in the references below.
+
+Books:
+
+Java Performance - practical guide, contains chapters on GC, explains comprehensively 
+when and how to use various Hotspot GC algorithms,
+The Garbage Collection Handbook - Garbage-Collection theory explained, mentions all 
+available GC techniques.
+Talks/Articles:
+
+Java One 2012 Advanced JVM Tuning
+Java One 2012 G1 Garbage Collector Performance Tuning
+Garbage Collection Tuning Guide
+Java HotSpot Garbage Collection
+Mailing List:
 
 Thread pool, Bean life cycle, Concurrent API's, 
 Locks, Producer consumer Problem, Linked list implementation, 
 Hashmap and Treemap Implementation, Exception Handling, 
 Servlet life cycle, Internal working of Garbage collectors etc  
 
-swap two variables without using third variable.  
+Q.swap two variables without using third variable?
+Ans.
+    a = 10, b = 20;
+    b = a + b;
+    a = b - a;
+    b = b - a;	
 
-why use locks instead of synchronization?
-How to stop a thread?
+Q. why use locks instead of synchronization?
+Ans.
+Q. How to stop a thread?
+Ans.
 Executor service ?
 rules of overriding?
-How to serialize singleton?  
+Q.How to serialize singleton?  
 
 Cutting a cake in 8 parts in 3 cuts
 

@@ -21,9 +21,14 @@ public class SinglyListDemo{
 		Node node8 = new Node(20);
 		customList.insertAtEnd(node8);
 		Node node9 = new Node(23);
+		//node9.setNext(node4);
 		customList.insertAtEnd(node9);
 		
-		Node head = customList.getHead();
+		
+		/*
+		 * last 3 item from end
+		*/
+		/*Node head = customList.getHead();
 		Node lastThird = head, lastSecond = head.next, lastFirst = head.next.next;
 		while(lastFirst.next != null){
 			lastThird = lastThird.next;
@@ -33,6 +38,9 @@ public class SinglyListDemo{
 			lastFirst = lastFirst.next;
 		}
 		System.out.print(" 3-> "+lastThird+" 2 -> "+lastSecond+" 1-> "+lastFirst);
+		*/
+		
+		System.out.print("List has loop "+customList.hasLoop(node1));
 	}
 
 }
@@ -190,5 +198,20 @@ class CustomLinkList{
 		q.next = null;
 		length--;
 		return p;
+	}
+	
+	public boolean hasLoop(Node root){
+		Node slow = root;
+		Node fast = root;
+		
+		while(fast != null && fast.next != null){
+			slow = slow.next;
+			fast = fast.next.next;
+			
+			if(slow == fast)
+				return true;
+		}
+		
+		return false;
 	}
 }
