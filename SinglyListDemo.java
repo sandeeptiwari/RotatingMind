@@ -214,4 +214,25 @@ class CustomLinkList{
 		
 		return false;
 	}
+	
+	public Node reverse(Node root){
+		
+		if(root == null)
+			return null;
+		
+		if(root.next == null){
+			return root;
+		}
+		
+		Node secElement = root.next;
+		
+		root.next = null;
+		
+		Node reverseNode  = reverse(secElement);
+		
+		secElement.next = root;
+		
+		return reverseNode;
+		
+	}
 }
