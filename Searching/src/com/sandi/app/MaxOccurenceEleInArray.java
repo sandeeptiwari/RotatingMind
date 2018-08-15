@@ -64,5 +64,17 @@ public class MaxOccurenceEleInArray {
 		return Integer.MIN_VALUE;
 	}
 	
+	
+	//How to find the only number in an array that doesn't occur twice
+	//{3, 4, 5, 3, 4}
+	public int getOccursOne(int arr[]) {
+		int ele = 0;
+		for (int i = 0; i < arr.length; i++) {
+			ele = ele^arr[i];
+		}
+		
+		return ele;
+	}
+
 
 }

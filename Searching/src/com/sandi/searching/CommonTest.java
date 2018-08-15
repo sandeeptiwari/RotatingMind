@@ -37,5 +37,17 @@ public class CommonTest {
 		assertTrue(actual == expected);
 		
 	}
+	
+	@Test
+	@DisplayName("Doesn't occur twice in arra")
+	public void testGetOccursOneEle() {
+		int []a = {3, 4, 5, 3, 4};
+		
+		int actual = obj.getOccursOne(a);
+		int expected = 5;
+		
+		assertTrue(actual == expected);
+		
+	}
 
 }
