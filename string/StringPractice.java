@@ -52,6 +52,10 @@ public class StringPractice {
 		// ... but you should really just call Objects.equals()
 		Objects.equals("test", new String("test"));// --> true
 		Objects.equals(null, "test") ;// --> false
+		
+		 String s1 = "test";
+                String s2 = "test";
+                System.out.print((s1 == s2));//true
 	}
 
 }
