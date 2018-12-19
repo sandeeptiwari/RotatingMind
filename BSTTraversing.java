@@ -45,6 +45,26 @@ public class BSTTraversing{
 		}
 	}
 	
+private static void inorderTraverse(TreeNode bsTree ){
+        Deque<TreeNode> bsTreeStack = new ArrayDeque<>();
+        bsTreeStack.push(bsTree);
+        Root current = bsTree;
+
+        while (!bsTreeStack.isEmpty()){
+            if(current.left != null){
+                bsTreeStack.push(current.left);
+                current = current.left;
+            }else{
+                current = bsTreeStack.pop();
+                System.out.println(current.value);
+                if(current.right != null){
+                    bsTreeStack.push(current.right);
+                    current = current.right;
+                }
+            }
+        }
+    }
+	
 	//inOrder traversing by recursively
 	public void inOrder(TreeNode root) {  
 	  if(root !=  null) {  
