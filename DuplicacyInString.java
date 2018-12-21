@@ -31,4 +31,27 @@ public class DuplicacyInString{
 		DuplicacyInString duplicacyInString = new DuplicacyInString();
 		duplicacyInString.getDuplicacy("sandeep kumar tiwari");
 	}
+	
+	public static void byUsingSet(String input) {
+        Map<Character, Integer> characterMap = new HashMap<>();
+        for (int index = 0; index < input.length(); index++) {
+            char ch = input.charAt(index);
+            increment(characterMap, ch);
+        }
+        characterMap.entrySet().stream().filter(getPredicate()).forEach(v -> {
+            System.out.print(v.getKey() + " occurs " + v.getValue() + ", ");
+        });
+
+    }
+
+    private static Predicate<Map.Entry<Character, Integer>> getPredicate() {
+        Predicate<Map.Entry<Character, Integer>> p1 = ele -> ele.getValue() > 1;
+        Predicate<Map.Entry<Character, Integer>> p2 = ele -> ele.getKey() != ' ';
+
+        return p1.and(p2);
+    }
+
+    public static <K> void increment(Map<K, Integer> map, K key) {
+        map.merge(key, 1, Integer::sum);
+    }
 }
