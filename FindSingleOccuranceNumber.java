@@ -25,4 +25,22 @@ public class FindSingleOccuranceNumber{
 		searchNumber.searchNumber(arr);
 		//System.out.println("Unique Number : "+result);
 	}
+	
+	private static int findSingleOcc(int[] arr) {
+        int singleOccu = Integer.MIN_VALUE;
+
+        for (int i = 0, j = arr.length - 1; i < j; ) {
+            if (arr[i] != arr[j]) {
+                singleOccu = arr[i];
+                j--;
+            } else {
+                singleOccu = Integer.MIN_VALUE;
+                j = arr.length - 1;
+                i++;
+            }
+
+
+        }
+        return singleOccu;
+    }
 }
