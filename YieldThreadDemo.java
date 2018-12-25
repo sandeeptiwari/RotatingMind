@@ -25,7 +25,7 @@ public class YieldThreadDemo{
 	//}catch(InterruptedException ie){}
 	
 	for(int i = 0; i< 10; i++){
-		   System.out.println("Main Thread");
+		   System.out.println("JITOptimization Thread");
 		  // Thread.yield();
 	   }
   }

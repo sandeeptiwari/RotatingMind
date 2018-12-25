@@ -9,7 +9,7 @@ public class Main {
 		MyThread myThread = new MyThread(lock);
 		myThread.start();
 		
-		System.out.println("Main method is going to release lock");
+		System.out.println("JITOptimization method is going to release lock");
 		
 		try {
 			synchronized (lock) {
@@ -19,7 +19,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Main method get notified by other one");
+		System.out.println("JITOptimization method get notified by other one");
 		
 	}
 

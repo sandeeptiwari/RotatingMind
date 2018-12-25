@@ -18,7 +18,7 @@ public class MyThreadDemo{
 	  
 	  //,MyThread myThread = new MyThread();
 	  for(int i = 0; i< 10 ; i++){
-		System.out.println("Main Thread");
+		System.out.println("JITOptimization Thread");
 	  }
 	  System.out.println("Before setting priority of main thread");
 	  System.out.println("mainThread priority is "+Thread.currentThread().getPriority());// 5
@@ -27,7 +27,7 @@ public class MyThreadDemo{
 	  Thread.currentThread().setPriority(7);
 	  MyThread myThread = new MyThread();//if you instantiate it before setting main thread priority then its priority would be 5
 	  System.out.println("after setting priority of main thread");
-	  System.out.println(" Main thread priority "+Thread.currentThread().getPriority());//7
+	  System.out.println(" JITOptimization thread priority "+Thread.currentThread().getPriority());//7
 	  System.out.println("MyThread priority is "+myThread.getPriority());// 7
 	  
 	  myThread.start();
