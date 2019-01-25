@@ -80,3 +80,28 @@ shift distance. It is as if the right-hand operand were subjected to a bitwise l
 
 For example, the shift distance op2 is 69 in the op1 >> 69 (op1 is long type) . The 69's binary equivalent is 01000101 and it over the 
 rang [0,63]. The actually shift distance is op2 & 0x3f = 0x05. Thus, (op1 >> 69) has the same result as (op1 >> 5) .
+
+
+# What function does the ^ (caret) operator serve in Java?
+
+(decimal)    (binary)
+     5     =  101
+     6     =  110
+------------------ xor
+     3     =  011
+This the truth table for bitwise (JLS 15.22.1) and logical (JLS 15.22.2) xor:
+
+^ | 0 1      ^ | F T
+--+-----     --+-----
+0 | 0 1      F | F T
+1 | 1 0      T | T F
+
+Operator    Name         Example     Result  Description
+a & b       and          3 & 5       1       1 if both bits are 1.
+a | b       or           3 | 5       7       1 if either bit is 1.
+a ^ b       xor          3 ^ 5       6       1 if both bits are different.
+~a          not          ~3          -4      Inverts the bits.
+n << p      left shift   3 << 2      12      Shifts the bits of n left p positions. Zero bits are shifted into the low-order positions.
+n >> p      right shift  5 >> 2      1       Shifts the bits of n right p positions. If n is a 2's complement signed number, the sign bit is shifted into the high-order positions.
+n >>> p     right shift  -4 >>> 28   15      Shifts the bits of n right p positions. Zeros are shifted into the high-order positions.
+
