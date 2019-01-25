@@ -9,9 +9,11 @@ Operator	Use	Description
 Shifting is basically taking the binary equivalent of a number and moving the bit pattern left or right.
 
 Left Shift Operator <<
-This operator shifts the first operand the specified number of bits to the left. Excess bits shifted off to the left are discarded. Zero bits are shifted in from the right. For example,
+This operator shifts the first operand the specified number of bits to the left. Excess bits shifted off to the left are discarded. 
+Zero bits are shifted in from the right. For example,
 
-Consider 12 whose binary equivalent is 00000000 00000000 00000000 00001100 (binary for 32 bits). Remember that the type operands (such as byte and short) are implicitly promoted to the int type before any shift operators are applied. Let's shift it left 2 times.
+Consider 12 whose binary equivalent is 00000000 00000000 00000000 00001100 (binary for 32 bits). Remember that the type operands 
+(such as byte and short) are implicitly promoted to the int type before any shift operators are applied. Let's shift it left 2 times.
 
 00000000 00000000 00000000 00001100 << 2(times)
 When you shift left ( << ) the void left behind by the shift is filled by zero's. This is the result of (12<<2):
@@ -29,40 +31,52 @@ Let's do -12<<28 and the result is
  
 
 Right Shift Operator >>
-This operator shifts the first operand the specified number of bits to the right. Excess bits shifted off to the right are discarded. Copies of the leftmost bit are shifted in from the left.
+This operator shifts the first operand the specified number of bits to the right. Excess bits shifted off to the right are discarded. 
+Copies of the leftmost bit are shifted in from the left.
 
-Consider 12 whose binary equivalent is 00000000 00000000 00000000 00001100 (binary for 32 bits). Remember that the type operands (such as byte and short) are implicitly promoted to the int type before any shift operators are applied. Let's shift it right 2 times.
+Consider 12 whose binary equivalent is 00000000 00000000 00000000 00001100 (binary for 32 bits). Remember that the type operands 
+(such as byte and short) are implicitly promoted to the int type before any shift operators are applied. Let's shift it right 2 times.
 
 00000000 00000000 00000000 00001100 >> 2(times)
-When shifting right ( >> ) the leftmost bits exposed by the right shift are filled in with previous contents of the leftmost bit. This is the result of (12>>2):
+When shifting right ( >> ) the leftmost bits exposed by the right shift are filled in with previous contents of the leftmost bit. 
+This is the result of (12>>2):
 
 00000000 00000000 00000000 00000011 (3)
 Consider -12 whose binary equivalent is 11111111 11111111 11111111 11110100 (binary for 32 bits). Let's shift it right 2 times.
 
 11111111 11111111 11111111 11110100 >> 2(times)
-When shifting right ( >> ) the leftmost bits exposed by the right shift are filled in with previous contents of the leftmost bit. This is the result of (-12>>2):
+When shifting right ( >> ) the leftmost bits exposed by the right shift are filled in with previous contents of the leftmost bit. 
+This is the result of (-12>>2):
 
 11111111 11111111 11111111 11111101 (-3)
-Note that right shifting ( >> ) always preserves the sign of the original number i.e. to say that a negative number will stay negative while a positive number will stay positive after a right shift ( >> ).
+Note that right shifting ( >> ) always preserves the sign of the original number i.e. to say that a negative number will stay negative 
+while a positive number will stay positive after a right shift ( >> ).
 
  
 
 Unsigned Right Shift Operator >>>
-This operator shifts the first operand the specified number of bits to the right. Excess bits shifted off to the right are discarded. Zero bits are shifted in from the left.
+This operator shifts the first operand the specified number of bits to the right. Excess bits shifted off to the right are discarded. 
+Zero bits are shifted in from the left.
 
-When shifting right ( >> ) the leftmost bits exposed by the right shift are filled in with previous contents of the leftmost bit. BUT, the >>> unsigned right shift operator always fill zero's and only zero's no matter positive and negative number. For example,
+When shifting right ( >> ) the leftmost bits exposed by the right shift are filled in with previous contents of the leftmost bit. BUT, 
+the >>> unsigned right shift operator always fill zero's and only zero's no matter positive and negative number. For example,
 
 Let's do 00000000 00000000 00000000 00001100 >>> 2 (12>>>2) and the result is 00000000 00000000 00000000 00000011 (3).
 Let's do 11111111 11111111 11111111 11110100 >>> 2 (-12>>>2) and the result is 00111111 11111111 11111111 11111101 (1073741821).
 What is the Range for Shift Distance op2?
-If the promoted type of the left-hand operand is int, only the five lowest-order bits of the right-hand operand are used as the shift distance. It is as if the right-hand operand were subjected to a bitwise logical AND operator &  with the mask value 0x1f. The shift distance actually used is therefore always in the range 0 to 31, inclusive.
+If the promoted type of the left-hand operand is int, only the five lowest-order bits of the right-hand operand are used as the shift
+distance. It is as if the right-hand operand were subjected to a bitwise logical AND operator &  with the mask value 0x1f. The shift distance actually used is therefore always in the range 0 to 31, inclusive.
 
-For example, the shift distance op2 is 34 in the op1 >> 34 (op1 is int type) . The 34's binary equivalent is 00100010 and it over the rang [0,31]. The actually shift distance is op2 & 0x1f = 0x02. Thus, (op1 >> 34) has the same result as (op1 >> 2) .
+For example, the shift distance op2 is 34 in the op1 >> 34 (op1 is int type) . The 34's binary equivalent is 00100010 and it over the 
+rang [0,31]. The actually shift distance is op2 & 0x1f = 0x02. Thus, (op1 >> 34) has the same result as (op1 >> 2) .
 
-Let's take a look another example 12<<-3. The -3 binary representation is 11111101. Then op2= 0xfd & 0x1f = 0x1d = 29. The result of (12<<-3) has the same result as (12<<29).< /p>
+Let's take a look another example 12<<-3. The -3 binary representation is 11111101. Then op2= 0xfd & 0x1f = 0x1d = 29. 
+The result of (12<<-3) has the same result as (12<<29).< /p>
 
  
 
-If the promoted type of the left-hand operand is long, then only the six lowest-order bits of the right-hand operand are used as the shift distance. It is as if the right-hand operand were subjected to a bitwise logical AND operator &  with the mask value 0x3f. The shift distance actually used is therefore always in the range 0 to 63, inclusive.
+If the promoted type of the left-hand operand is long, then only the six lowest-order bits of the right-hand operand are used as the 
+shift distance. It is as if the right-hand operand were subjected to a bitwise logical AND operator &  with the mask value 0x3f. The shift distance actually used is therefore always in the range 0 to 63, inclusive.
 
-For example, the shift distance op2 is 69 in the op1 >> 69 (op1 is long type) . The 69's binary equivalent is 01000101 and it over the rang [0,63]. The actually shift distance is op2 & 0x3f = 0x05. Thus, (op1 >> 69) has the same result as (op1 >> 5) .
+For example, the shift distance op2 is 69 in the op1 >> 69 (op1 is long type) . The 69's binary equivalent is 01000101 and it over the 
+rang [0,63]. The actually shift distance is op2 & 0x3f = 0x05. Thus, (op1 >> 69) has the same result as (op1 >> 5) .
