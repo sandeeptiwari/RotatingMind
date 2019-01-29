@@ -104,7 +104,18 @@ private static void inorderTraverse(TreeNode bsTree ){
       System.out.printf("%d ",root.data);  
       preorder(root.left);  
       preorder(root.right);  
-    }  
+    }
+    
+    private int countsInternalNode(Root root){
+    	if(root == null)
+	 return 0;
+	if(root.left == null && root.right == null)
+	 return 0;
+	 
+	return 1+ countsInternalNode(root.left) + countsInternalNode(root.right);
+	
+    }
+    
   } 
 	
 	public static void main(String...args){
