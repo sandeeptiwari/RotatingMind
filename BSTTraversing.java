@@ -1,4 +1,9 @@
 import java.util.Stack;
+
+/*
+ * The order of inorder traversal is LEFT ROOT RIGHT The order of preorder traversal is ROOT LEFT RIGHT The order of postorder 
+ * traversal is LEFT RIGHT ROOT In all three traversals, LEFT is traversed before RIGHT
+*/
 public class BSTTraversing{
 	
 	
