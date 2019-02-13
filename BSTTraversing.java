@@ -51,22 +51,20 @@ public class BSTTraversing{
 	}
 	
 private static void inorderTraverse(TreeNode bsTree ){
-        Deque<TreeNode> bsTreeStack = new ArrayDeque<>();
-        bsTreeStack.push(bsTree);
-        Root current = bsTree;
+       ArrayDeque<TreeNode> stack = new ArrayDeque<>();// step 1
+        TreeNode current = bsTree;
 
-        while (!bsTreeStack.isEmpty()){
-            if(current.left != null){
-                bsTreeStack.push(current.left);
+        while(current != null || !stack.isEmpty()){
+
+            while(current != null) {
+                stack.push(current);
                 current = current.left;
-            }else{
-                current = bsTreeStack.pop();
-                System.out.println(current.value);
-                if(current.right != null){
-                    bsTreeStack.push(current.right);
-                    current = current.right;
-                }
             }
+                current = stack.poll();
+                System.out.print(current.data);
+
+                current = current.right;
+
         }
     }
 	
