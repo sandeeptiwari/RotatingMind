@@ -79,8 +79,8 @@ private static void inorderTraverse(TreeNode bsTree ){
      *          node in current's left subtree
      *       b) Go to this left child, i.e., current = current->left
      */
-    public void morrisTraversal(Root root){
-        Root current, pre;
+    public void morrisTraversal(TreeNode root){
+        TreeNode current, pre;
 
         if (root == null)
             return;
@@ -125,6 +125,24 @@ private static void inorderTraverse(TreeNode bsTree ){
 		   inOrder(root.right);  
 	  }  
  }  
+ 
+ public static void levelTraversing(TreeNode root){
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            Root current = queue.poll();
+
+            System.out.print(current.data);
+
+            if(current.left != null)
+                queue.add(current.left);
+            if(current.right != null)
+                queue.add(current.right);
+
+
+        }
+    }
 	
 	//pre order traversing by iterative
 	public void preOrderTraverse(TreeNode root){
