@@ -2,9 +2,13 @@
 2-hashing algo
 3-https://www.youtube.com/watch?v=saiwZzE5IYg
 4-Can you make an abstract class/method final in Java?
+ -> Illegal combination
 5-Can abstract class have a constructor in Java?
+-> Yes
 6-Can you override a static method in Java?
+-> methodhiding
 7-Can you overload a static method in Java?
+-> yes
 8-Can you run a program without main() method in Java?
 9-Can you override a private method in Java?
 10-Can you overload and override the main() method in Java?
