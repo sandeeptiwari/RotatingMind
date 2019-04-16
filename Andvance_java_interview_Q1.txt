@@ -58,5 +58,10 @@ ans.
 	Mostly that should work. But in case it doesn't execute the following command
 
 	httpd.exe -k config -n "New Apache" -f "C:\path\to\httpd.conf Hope that helps!
-	
-3- 
+=====================================================================================================================================================================================
+1- 26 Thread print A, B , C---
+2- file line startwith alphabet and words count greater
+3- first proxy will return or object in hibernet get/load
+4- MVC architecture
+5- deployement descriptor/dispatcher servlet
+6- swalow cloning/deep cloning

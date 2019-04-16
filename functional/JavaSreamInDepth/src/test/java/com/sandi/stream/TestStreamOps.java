@@ -32,7 +32,7 @@ class TestStreamOps {
 	/* Stream.of(arrayOfEmps[0], arrayOfEmps[1], arrayOfEmps[2]);
 	 * Or simply using Stream.builder():
 	 * 
-	 * Stream.Builder<Employee> empStreamBuilder = Stream.builder();
+	 * Stream.Pizza<Employee> empStreamBuilder = Stream.builder();
 	 * empStreamBuilder.accept(arrayOfEmps[0]);
 	 * empStreamBuilder.accept(arrayOfEmps[1]);
 	 * empStreamBuilder.accept(arrayOfEmps[2]);

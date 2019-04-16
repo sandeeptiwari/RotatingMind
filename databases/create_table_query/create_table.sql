@@ -20,6 +20,8 @@ MAX_SALARY decimal(6,0)
 CHECK(MAX_SALARY<=25000)
 );
 
+DELIMITER $$
+USE `practice`$$
 CREATE 
 	TRIGGER myTrigger BEFORE INSERT ON jobs 
 	FOR EACH ROW BEGIN
@@ -28,7 +30,8 @@ CREATE
             SET MESSAGE_TEXT = 'Could not insert value didnt match';
         END IF;
         insert into jobs(job_id, job_title, min_salary, max_salary) values('kt201', 'sse', 2500, 25100)
-END;
+END$$
+DELIMITER ;
 
 
 
@@ -49,3 +52,20 @@ drop table countries;
 create table countries(country_id varchar(2), country_name ENUM ('India','Italy','China'), region_id decimal(10,0));
 
 insert into countries values('IT',4,13);
+
+
+DROP TRIGGER IF EXISTS `practice`.`countries_BEFORE_INSERT`;
+
+DELIMITER $$
+USE `practice`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `practice`.`countries_BEFORE_INSERT` BEFORE INSERT ON `countries` FOR EACH ROW
+BEGIN
+IF (NEW.country_name !='italy' AND NEW.country_name != 'india' AND NEW.country_name != 'china')
+THEN 
+SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT = 'ERROR!! No MATCH CONDITION';
+END IF;
+END$$
+DELIMITER ;
+
+INSERT INTO countries(country_name, region_id)
+VALUES('india',9999);
