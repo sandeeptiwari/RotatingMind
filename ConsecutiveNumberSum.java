@@ -34,7 +34,7 @@
         
         for(int i = 1; i*(i + 1) < 2 * n; i++){
             
-             int a = [N - (L * (L + 1) / 2)]/ ( L + 1 );
+             float a = (float)[1.0 * N - (i * (i + 1) / 2)]/ ( i + 1 );
              
              if( a - (int)a == 0)
               count++
