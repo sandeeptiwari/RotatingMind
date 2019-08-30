@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 /* * 
- * Java Program to print all key-value pairs of ConcurrentHashMap 
+ * Java Program to print all key-value pairs of ConcurrentHashMapDemo
  * There are multiple ways to do this e.g. by using keySet(), entrySet() 
  * in combination of for loop and iterator. 
  */
@@ -19,9 +19,9 @@ public class ConcurrentHashMapDemo{
 		map.put("iPad", 99);
 		map.put("iPad Mini", 600);
 		
-		//printing all keys of ConcurrentHashMap
+		//printing all keys of ConcurrentHashMapDemo
 		
-		System.out.println("All keys of ConcurrentHashMap");
+		System.out.println("All keys of ConcurrentHashMapDemo");
 		for(Map.Entry<String, Integer> entry : map.entrySet()){
 			String key = entry.getKey();
 			Integer value = entry.getValue();
