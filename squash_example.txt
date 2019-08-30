@@ -1,1 +1,3 @@
 Hi This exampe of squash file
+
+Line -2
