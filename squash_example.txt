@@ -1,8 +1,0 @@
---intractive (-i)
-
-commit-1
-commit-2 ---> commit-4
-commit-3
-
-
-This is example of squashing 2 commits into single one

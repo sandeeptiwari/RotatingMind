@@ -1,2 +1,0 @@
-Quiz:- A person have 100 cards, each card have one of the number between 1-100. Now person is starting to pick the card for reading. He picks the any one of the random card,read and 
-       teared up. Repeat this process for 99 times. Now tell me which number on remaining card.
