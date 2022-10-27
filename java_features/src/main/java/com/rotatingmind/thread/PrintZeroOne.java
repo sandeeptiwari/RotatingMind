@@ -11,10 +11,6 @@ public class PrintZeroOne {
     private static Condition condition = lock.newCondition();
 
     private static Queue<Integer> queue = new LinkedList<>();
-    private static final int MAX = 100;
-    private static final int COUNT = 100;
-    private static int zero_wait_time = 01;
-    private static int one_wait_time = 50;
 
     public static void main(String[] args) {
         PrinterWithCondition printer = new PrinterWithCondition(lock, condition);
@@ -98,7 +94,7 @@ class ZeroOneTaskV1 implements Runnable {
     private PrinterWithCondition print;
     private boolean isZero;
 
-    public ZeroOneTaskV1(PrinterWithCondition print, boolean isZero){
+    public   ZeroOneTaskV1(PrinterWithCondition print, boolean isZero){
         this.print = print;
         this.isZero = isZero;
     }

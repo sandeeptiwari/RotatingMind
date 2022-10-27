@@ -6,11 +6,11 @@ public class LiscovDemo {
 
     public static void main(String[] args) {
 
-        List<Member> members = List.of(
+       /* List<Member> members = List.of(
                 new PremiumMember("Jack Hores"),
                 new VipMember("Tom Jhon"),
                 new FreeMember("Martin Vilop")
-        );
+        );*/
 
        /* List<TournamentOrganizer> members = List.of(
                 new PremiumMember("Jack Hores"),

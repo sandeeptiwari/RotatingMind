@@ -13,7 +13,7 @@ public class ComparableDemo {
         Employee e3 = new Employee("Peter", 30000);
         Employee e4 = new Employee("James", 2000);
 
-        Function<Employee, String> getName = emp1 -> emp1.getName();
+        Function<Employee, String> getName = Employee::getName;
         Comparator<Employee> cmp = Comparator.comparing(getName);
 
         System.out.println(cmp.compare(e2, e1) > 0);

@@ -14,7 +14,6 @@ public class FindFirstNonRepeatingChar {
         Map<Character, Integer> charByCount = new LinkedHashMap<>();
 
         for (int i = 0; i < str.length(); i++) {
-
             char ch = str.charAt(i);
             charByCount.compute(ch, (k, v) ->  v == null ? 1 : ++v);
         }

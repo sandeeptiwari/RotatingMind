@@ -1,4 +1,4 @@
-package com.semanticsquare.jvm;
+package com.sandi.jvm;
 
 public class User {
     private int id;

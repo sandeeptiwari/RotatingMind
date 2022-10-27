@@ -2,7 +2,7 @@ package com.rotatingmind.array;
 
 import java.util.Arrays;
 
-public class MoveAllZeroToTheEndMaintainOrder {
+public class  MoveAllZeroToTheEndMaintainOrder {
 
     public static void main(String[] args) {
         int arr[] = {0, 0, 0, 8, 7, 5, 0, 10, 0, 0, 20, 0};

@@ -63,9 +63,9 @@ public class ReflectionDemo {
 		
 		// Fetch constructor & invoke it
 		@SuppressWarnings("unchecked")
-		Constructor<com.semanticsquare.jvm.User> userConstructor = clazz.getDeclaredConstructor(int.class, String.class, String.class, String.class, String.class);
+		Constructor<User> userConstructor = clazz.getDeclaredConstructor(int.class, String.class, String.class, String.class, String.class);
 		@SuppressWarnings("unchecked")
-		com.semanticsquare.jvm.User user = userConstructor.newInstance(101, "john", "john@semanticsquare.com", "male", "user");
+		User user = userConstructor.newInstance(101, "john", "john@semanticsquare.com", "male", "user");
 		
 		// Fetch method & invoke it
 	    @SuppressWarnings("unchecked")
@@ -76,6 +76,6 @@ public class ReflectionDemo {
 	
 	public static void main(String[] args) throws Exception {
     	demoClassObjectAccess();		
-		demoCoreReflection(Class.forName("com.semanticsquare.jvm.User"));
+		demoCoreReflection(Class.forName("com.sandi.jvm.User"));
 	}
 }

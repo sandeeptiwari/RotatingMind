@@ -1,7 +1,8 @@
-package com.rotatingmind.string;
+package com.rotatingmind.filehandling;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
@@ -29,13 +30,16 @@ public class CsvReader {
     }
 
     private Item processTheFile(File file) throws IOException {
-        try(Stream<String> lines = Files.lines(Paths.get("filePath"))) {
+        try(Stream<String> lines = Files.lines(
+                Paths.get(ClassLoader.getSystemResource("sales_data.csv").toURI()))) {
               lines.map(line -> {
                           String arr[] = line.split(",");
                           return new Item(arr[0], arr[1], Integer.valueOf(arr[2]));
                       }).collect(Collectors.toMap(Item::getQuantity, Function.identity()))
                       .entrySet().stream().max(Map.Entry.comparingByKey()).get().getValue();
 
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
         return null;
     }
