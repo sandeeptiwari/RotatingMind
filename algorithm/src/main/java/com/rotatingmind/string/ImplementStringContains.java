@@ -4,8 +4,8 @@ public class ImplementStringContains extends Object {
 
     public static void main(String[] args) {
         ImplementStringContains obj = new ImplementStringContains();
-        System.out.println("Find At " + obj.indexOf("Naman Tiwari", "Tiwari"));
-        System.out.println("Naman Tiwari".indexOf("Tiwari"));
+        System.out.println("Find At " + obj.indexOf("NamanT Tiwari", "Tiwari"));
+        System.out.println("NamanT Tiwari".contains("Tiwari"));
     }
 
     public int indexOf1(String srcStr, String targetStr) {
@@ -17,7 +17,7 @@ public class ImplementStringContains extends Object {
                 char currentChar = srcStr.charAt(i);
                 if (currentChar != first) {
                      i = 0;
-                    while (i < diff && currentChar != first) i++;
+                    while (i < diff) i++;
                 }
                 // Found first character, now look at the rest of v2
                 if (i <= diff) {
@@ -51,7 +51,7 @@ public class ImplementStringContains extends Object {
         for (int i = 0; i < diff; i++) {
             char current = src.charAt(i);
             if (current != first) {
-                while(i < diff && current != first) i++;
+                while(i < diff) i++;
             }
 
             if (i <= diff) {

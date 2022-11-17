@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Pantry",
+    "childrenItems": [
+      {
+        "name": "Butter",
+        "childrenItems": [
+          {
+            "name": "Cream",
+            "childrenItems": []
+          }
+        ]
+      },
+      {
+        "name": "Snack",
+        "childrenItems": []
+      }
+    ]
+  },
+  {
+    "name": "Medicine",
+    "childrenItems": []
+  }
+]

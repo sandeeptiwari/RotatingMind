@@ -116,6 +116,8 @@ public class LinkList<T extends Comparable<T>> implements List<T> {
         return reverseNode;
     }
 
+
+
     @Override
     public int size() {
         return numberOfItems;

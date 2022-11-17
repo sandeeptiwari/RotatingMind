@@ -2,41 +2,83 @@ package com.rotatingmind.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class IntersectionOfTwoArray {
 
-    public int[] intersection(int arr1[], int arr2[]) {
-        int parent[] = arr1.length >= arr2.length ? arr1 : arr2;
-        int child[] = arr1.length >= arr2.length ? arr2 : arr1;
-        return Arrays.stream(parent)
+    public static int[] intersection(int[] arr1, int[] arr2) {
+        int[] parent = arr1.length >= arr2.length ? arr1 : arr2;
+        int[] child = arr1.length >= arr2.length ? arr2 : arr1;
+
+        Set<Integer> set = Arrays.stream(parent).boxed().collect(Collectors.toSet());
+
+        Integer[] set1 = Arrays.stream(child).filter(set::contains)
                 .boxed()
-                .filter(ele -> Arrays.stream(child)
-                        .boxed()
-                        .anyMatch(ele1 -> ele1 == ele))
-                .mapToInt(ele -> ele)
-                .toArray();
+                .collect(Collectors.toSet()).toArray(Integer[]::new);
+        int[] result = new int[set1.length];
+
+        for (int i = 0; i < set1.length; i++) {
+            result[i] = set1[i].intValue();
+        }
+        return result;
     }
 
-    public static Integer[] commonElements(int[] array1, int[] array2) {
-        int p1 = 0;
-        int p2 = 0;
-        // Need to use ArrayList because we don't know the size of the resulting
-        // array yet. Note that an ArrayList is resizable.
-        ArrayList<Integer> result = new ArrayList();
-        while(p1 < array1.length && p2 < array2.length){
-            if (array1[p1] == array2[p2]) {
-                result.add(array1[p1]);
-                p1 += 1;
-                p2 += 1;
-            }
-            else if (array1[p1] > array2[p2]) {
-                p2 += 1;
-            } else {
-                p1 += 1;
+    public static int[] intersectionV2(int[] arr1, int[] arr2) {
+        Set<Integer> results = new HashSet<>();
+        int[] parent = arr1.length >= arr2.length ? arr1 : arr2;
+        Arrays.sort(parent);
+        int[] child = arr1.length >= arr2.length ? arr2 : arr1;
+
+        for (int i = 0; i < child.length; i++) {
+
+            if (binarySearch(arr2, child[i])) {
+                results.add(child[i]);
             }
         }
-        // Convert the result to a regular array.
-        Integer[] resultInArray = new Integer[result.size()];
-        return result.toArray(resultInArray);
+
+        int[] result = new int[results.size()];
+        int i = 0;
+        for (int num : results) {
+            result[i++] = num;
+        }
+        return result;
+
+    }
+
+    private static boolean binarySearch(int[] arr2, int num) {
+        int start = 0;
+        int last = arr2.length -1;
+
+        while (start <= last) {
+            int mid = (start + last) / 2;
+
+            if (arr2[mid] == num) {
+                return true;
+            } else if (num < arr2[mid]) {
+                last = mid - 1;
+            } else if (num > arr2[mid]) {
+                start = mid + 1;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {1, 2, 2, 1};
+        int[] nums2 = {2, 2};
+        int[] nums3 = {4, 9, 5};
+        int[] nums4 = {9, 4, 9, 8, 4};
+
+        int[] nums5 = {1};
+        int[] nums6 = {1, 2};
+
+        int[] nums7 = {4, 7, 9, 7, 6, 7};
+        int[] nums8 = {5, 0, 0, 6, 1, 6, 2, 2, 4};
+
+        int[] set = intersectionV2(nums7, nums8);
+        Arrays.stream(set).forEach(System.out::print);
     }
 }

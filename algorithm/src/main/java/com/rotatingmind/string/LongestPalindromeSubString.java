@@ -32,4 +32,104 @@ public class LongestPalindromeSubString {
                 resultLength = end - begin - 1;
             }
         }
+
+
+    public String longestPalindromeV2(String s) {
+        int start = 0;
+        int end = 0;
+        for (int i = 0; i < s.length(); i++) {
+            //StringBuffer sb = new StringBuffer();
+            //sb.append(s.charAt[i]);
+            char c = s.charAt(i);
+            int left = i;
+            int right = i;
+
+            while (left >= 0 && s.charAt(left) == c) {
+                left--;
+            }
+
+            while (right < s.length() && s.charAt(right) == c) {
+                right++;
+            }
+
+            while (left >= 0 && right < s.length()) {
+                if (s.charAt(left) != s.charAt(right)) {
+                    break;
+                }
+                left--;
+                right++;
+            }
+
+
+            // left + 1 and right - 1 are actually the start and end index of the Palindromic string
+            // we don't set "right" because String.substring function required end index exclusively
+            left = left + 1;
+            if (end - start < right - left) {
+                start = left;
+                end = right;
+            }
+        }
+
+        return s.substring(start, end);
+    }
+
+    /**
+     * window : start is 0 and end is string's length
+     * check if this is a palindrome , if not reduce the window length by decreasing end
+     * position.
+     * if a palindrome is found , store the length and the string.
+     * Increment start position and repeat from step 2 ,
+     * if window becomes smaller than the palindrome found in the previous step ,
+     * break the loop
+     * @param args
+     */
+
+    public String longestPalindromeV3(String s) {
+        int start = 0;
+        int end = s.length() - 1;
+        int len = Integer.MIN_VALUE;
+
+        int start2 = 0;
+
+        String res = "";
+        while (start <= s.length() - 1) {
+
+            while (start2 <= end) {
+                if (isPalindrome(s, start2, end)) {
+                    // we already have a palindrome of greater length
+                    if (len >= (end - start2 + 1)) {
+                        break;
+                    }
+
+                    res = s.substring(start2, end + 1);
+                    len = end - start2 + 1;
+                    break;
+                }
+                end--;
+            }
+            start2 = start + 1;
+            start++;
+            end = s.length() - 1;
+        }
+
+        return res;
+    }
+    boolean isPalindrome(String s, int start, int end) {
+
+        while (start < end) {
+            if (s.charAt(start) != s.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+    public static void main(String[] args) {
+
+    }
+
+
+
 }

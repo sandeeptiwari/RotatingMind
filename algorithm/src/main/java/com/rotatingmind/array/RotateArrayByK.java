@@ -1,5 +1,7 @@
 package com.rotatingmind.array;
 
+import java.util.Arrays;
+
 public class RotateArrayByK {
 
     public void rotateByK(int[] a, int start, int end) {
@@ -64,5 +66,12 @@ public class RotateArrayByK {
         }
 
         return true;
+    }
+
+    public static void main(String[] args) {
+        int []a = {10, 20, 30, 40, 50, 60};
+        RotateArrayByK obj = new RotateArrayByK();
+        obj.rotate(a, 1);
+        Arrays.stream(a).forEach(ele -> System.out.print(ele + " "));
     }
 }

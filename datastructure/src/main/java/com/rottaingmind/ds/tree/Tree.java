@@ -4,6 +4,12 @@ public class Tree {
 
     private TreeNode root;
 
+    private TreeNode left;
+
+
+    private TreeNode right;
+
+
     public void insert(int value) {
         if (root == null) {
             root = new TreeNode(value);
@@ -113,5 +119,14 @@ public class Tree {
             return root.hasPathSum(root, targetSum);
         }
         return false;
+    }
+
+
+    public TreeNode getLeft() {
+        return root.left;
+    }
+
+    public TreeNode getRight() {
+        return root.right;
     }
 }
