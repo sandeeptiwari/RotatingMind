@@ -3,7 +3,8 @@ package com.rotatingmind.java8.stream.average;
 import java.util.Comparator;
 import java.util.List;
 
-import static com.google.common.primitives.Ints.asList;
+import static java.util.Arrays.asList;
+
 
 public class Demo {
 

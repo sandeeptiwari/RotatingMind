@@ -45,6 +45,11 @@ public class DoublyLinkList<T extends Comparable<T>> implements List<T> {
     }
 
     @Override
+    public void insertAtEnd(T data) {
+
+    }
+
+    @Override
     public int size() {
         return 0;
     }

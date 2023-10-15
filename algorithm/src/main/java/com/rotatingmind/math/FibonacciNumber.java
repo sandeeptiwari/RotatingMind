@@ -1,9 +1,12 @@
 package com.rotatingmind.math;
 
+import java.math.BigInteger;
+import java.util.stream.Stream;
+
 public class FibonacciNumber {
 
     public static void main(String[] args) {
-        printFibonacciNumbers(5);
+        printFibonacciNumbers();
     }
 
 
@@ -30,5 +33,13 @@ public class FibonacciNumber {
             b = c;
         }
         return c;
+    }
+
+    public static void printFibonacciNumbers() {
+        Stream.iterate(new BigInteger[]{ BigInteger.ONE, BigInteger.ONE },
+                f -> new BigInteger[] {f[1], f[0].add(f[1])})
+                .map(f -> f[0])
+                .limit(100)
+                .forEach(System.out::println);
     }
 }
