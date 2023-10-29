@@ -58,7 +58,7 @@ public class PivotIndex {
         int nums[] = {1, 7, 3, 6, 5, 6};
         // int nums[] = {1, 2, 3};
         // int nums[] = {2, 1, -1};
-        System.out.println(index.pivotIndex(nums));
+        //System.out.println(index.pivotIndex(nums));
         System.out.println(index.pivotIndex2(nums));
     }
 
