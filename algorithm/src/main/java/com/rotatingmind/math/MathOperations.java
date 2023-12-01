@@ -8,11 +8,14 @@ import java.util.stream.IntStream;
 public class MathOperations {
 
     public static void main(String[] args) {
-        boolean primes[] = seiveOfEratoSthenes(20);
+        MathOperations mathOperations = new MathOperations();
+        //boolean primes[] = seiveOfEratoSthenes(20);
 
-        for (int i = 0; i < 20; i++) {
-            System.out.println(i + " " + primes[i]);
-        }
+        //for (int i = 0; i < 20; i++) {
+        //    System.out.println(i + " " + primes[i]);
+       // }
+        mathOperations.findTheSumUptoSingleDigit(547674);
+
     }
 
     public double fact(int n) {
@@ -63,5 +66,27 @@ public class MathOperations {
         }
 
         return gcd(b, a % b);
+    }
+
+    int n = 2;
+    public void factorOfNumber(int num) {
+
+        while (n < num / 2) {
+
+            if (num % n == 0) {
+                System.out.println(" FACTOR " + n);
+            }
+            n++;
+        }
+    }
+
+    public void findTheSumUptoSingleDigit(int num) {
+        int sum = 0;
+        while (num > 0) {
+            int rem = num % 10;
+            sum += rem;
+            num = num / 10;
+        }
+        System.out.println(" SUM " + sum);
     }
 }

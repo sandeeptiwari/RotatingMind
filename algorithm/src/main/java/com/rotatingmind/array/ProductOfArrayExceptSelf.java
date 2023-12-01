@@ -86,7 +86,7 @@ public class ProductOfArrayExceptSelf {
         for (int i = len - 2; i >= 0; i--) {
             prefixProductEnd[i] = prefixProductEnd[i + 1] * nums[i];
         }
-
+        // nums = [1,2,3,4]
         // a = 1, 2, 6, 24
         // b = 24, 24, 12, 4
         //res = 24, 12, 8, 6
@@ -98,9 +98,6 @@ public class ProductOfArrayExceptSelf {
 
         return result;
     }
-
-
-
 
 
     public static void main(String[] args) {

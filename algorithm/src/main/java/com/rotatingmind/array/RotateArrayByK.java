@@ -42,6 +42,8 @@ public class RotateArrayByK {
     }
 
     // Implement your solution below.
+    //{10, 20, 30, 40, 50, 60};
+    // { 40, 50, 60, 10, 20, 30};
     public static Boolean isRotation(int[] array1, int[] array2) {
         if (array1.length != array2.length) return false;
 
