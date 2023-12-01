@@ -2,7 +2,7 @@ package com.rotatingmind.thread.completablefuture;
 
 import com.rotatingmind.thread.completablefuture.service.CreditRatingService;
 import com.rotatingmind.thread.completablefuture.service.UserService;
-import com.sandi.jvm.methodbinding.User;
+import interview.jvm.methodbinding.User;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;

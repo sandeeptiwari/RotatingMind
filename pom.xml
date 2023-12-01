@@ -16,16 +16,17 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.jupiter.version>5.5.2</junit.jupiter.version>
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    <maven.compiler.source>16</maven.compiler.source>
-    <maven.compiler.target>16</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
   </properties>
 
   <modules>
     <module>datastructure</module>
-      <module>java_features</module>
-      <module>ms-interview</module>
+    <module>java_features</module>
+    <module>ms-interview</module>
     <module>algorithm</module>
-      <module>system-design</module>
+    <module>system-design</module>
+    <module>rxjava</module>
   </modules>
 
   <dependencies>

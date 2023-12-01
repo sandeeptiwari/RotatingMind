@@ -20,5 +20,7 @@ public interface List<T extends Comparable<T>> {
 
     default void traverseForward() {};
 
-    default Node<T> getHead() { return null; };
+    default Node<T> getHead() { return null; }
+
+    void insertAtEnd(T data);
 }

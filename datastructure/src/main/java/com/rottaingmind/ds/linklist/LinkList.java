@@ -14,6 +14,15 @@ public class LinkList<T extends Comparable<T>> implements List<T> {
         numberOfItems++;
     }
 
+    @Override
+    public void insertAtEnd(T data) {
+        if (root == null) {
+            root = new Node<>(data);
+        } else {
+            insertAtEnd(data, root);
+        }
+        numberOfItems++;
+    }
     private void insertAtBeginning(T data) {
         Node<T> newNode = new Node<>(data);
         newNode.setNextNode(root);
@@ -67,12 +76,15 @@ public class LinkList<T extends Comparable<T>> implements List<T> {
         }
     }
 
+
     @Override
     public Node<T> getMiddleNode() {
+        if (root == null || root.getNextNode() == null) return root;
+
         Node<T> fastNode = root;
         Node<T> slowNode = root;
 
-        while (fastNode.getNextNode() != null && fastNode.getNextNode().getNextNode() != null) {
+        while (fastNode != null && fastNode.getNextNode() != null) {
             fastNode = fastNode.getNextNode().getNextNode();
             slowNode = slowNode.getNextNode();
         }
@@ -115,6 +127,8 @@ public class LinkList<T extends Comparable<T>> implements List<T> {
 
         return reverseNode;
     }
+
+
 
     @Override
     public int size() {
