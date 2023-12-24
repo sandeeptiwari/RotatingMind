@@ -2,7 +2,7 @@ package com.rotatingmind.array;
 
 import java.util.Arrays;
 
-public class SumOfThreeIntegersIsEqualToTheGivenValue {
+public class SumOfThreeIntegersIsEqualToTheGivenNumber {
 
     private static boolean findSumOfTwo(int[] arr, int val, int startIndex) {
         for (int i = startIndex, j = arr.length - 1; i < j; ) {
