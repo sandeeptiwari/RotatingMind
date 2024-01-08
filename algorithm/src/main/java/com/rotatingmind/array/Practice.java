@@ -1,5 +1,6 @@
 package com.rotatingmind.array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,26 +8,24 @@ public class Practice {
 
 
     public static void main(String[] args) {
-        int[] arr = {2,7,11,15};
-        int target = 9;
-        int[] result = twoSum(arr, target);
+        int[] arr = {7,1,5,3,6,4};
+        buySell(arr);
     }
 
-    private static int[] twoSum(int[] arr, int target) {
-        int[] result = new int[2];
-        Map<Integer, Integer> map = new HashMap<>();
+    //Input: nums = [1,2,3,4]
+    //Output: [24,12,8,6]
 
-        for (int i = 0; i < arr.length; i++) {
+    public static void buySell(int[] nums) {
+        int len = nums.length;
+        int maxProfit = Integer.MIN_VALUE;
+        int minProfit = Integer.MAX_VALUE;
 
-            int complement = target - arr[i];
-
-            if (map.containsKey(complement)) {
-                result[0] = map.get(complement);
-                result[1] = i;
-                return result;
-            }
-            map.put(arr[i], i);
+        for (int i = 0; i < len; i++) {
+            minProfit = Math.min(minProfit, nums[i]);
+            maxProfit = Math.max(maxProfit, nums[i] - minProfit);
         }
-        return result;
+
+        System.out.println(maxProfit);
     }
+
 }

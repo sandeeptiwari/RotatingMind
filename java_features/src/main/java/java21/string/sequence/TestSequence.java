@@ -1,4 +1,4 @@
-package java_21.string.sequence;
+package java21.string.sequence;
 
 import java.util.LinkedHashSet;
 import java.util.SequencedSet;
