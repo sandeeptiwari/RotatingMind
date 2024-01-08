@@ -1,4 +1,4 @@
-package java_21.string;
+package java21.string;
 
 
 public class TestStringTemplate {

@@ -41,25 +41,25 @@ public class PrintLongestSubString {
     }
 
     public static String longestSubStringV1(String s) {
-        int left = 0, right = 0;
-        int n = s.length();
+        int i = 0, j = 0;
+        int len = s.length();
         int maxLen = 0;
         String longestSubstring = "";
         int[] charFrequency = new int[255];
 
-        while (right < n) {
-            char rightChar = s.charAt(right);
+        while (j < len) {
+            char rightChar = s.charAt(j);
 
             if (charFrequency[rightChar] == 0) {
                 charFrequency[rightChar] += 1;
-                right++;
-                maxLen = Math.max(maxLen, right - left);
-                if (maxLen == right - left) { // Update longest substring if needed
-                    longestSubstring = s.substring(left, right);
+                j++;
+                maxLen = Math.max(maxLen, j - i);
+                if (maxLen == j - i) { // Update longest substring if needed
+                    longestSubstring = s.substring(i, j);
                 }
             } else {
-                charFrequency[s.charAt(left)] -= 1;
-                left++;
+                charFrequency[s.charAt(i)] -= 1;
+                i++;
             }
         }
         return longestSubstring;
