@@ -7,10 +7,9 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class MyBlockingQueue {
 
-    ReentrantLock reentrantLock = new ReentrantLock();
-    Condition condition = reentrantLock.newCondition();
+    private final ReentrantLock reentrantLock = new ReentrantLock();
+    private final Condition condition = reentrantLock.newCondition();
     private final Queue<Integer> q;
-
     private final int capacity;
 
     public MyBlockingQueue(int capacity) {
@@ -20,31 +19,36 @@ public class MyBlockingQueue {
 
     public int take() throws InterruptedException {
         reentrantLock.lock();
-        while (q.size() == 0) {
-            condition.wait();
+        try {
+            while (q.size() == 0) {
+                condition.await();
+            }
+
+            int val = q.poll();
+
+            if (q.size() == capacity - 1) {
+                condition.signalAll();
+            }
+
+            return val;
+        } finally {
+            reentrantLock.unlock();
         }
-
-        int val =  q.poll();
-
-        if (q.size() == capacity) {
-            condition.signal();
-        }
-
-        reentrantLock.unlock();
-
-        return val;
     }
 
     public void put(Integer x) throws InterruptedException {
         reentrantLock.lock();
-        while(q.size() == capacity) {
-            condition.wait();
-        }
-        q.add(x);
-        reentrantLock.unlock();
+        try {
+            while (q.size() == capacity) {
+                condition.await();
+            }
+            q.add(x);
 
-        if (q.size() == 1) {
-            condition.signal();
+            if (q.size() == 1) {
+                condition.signalAll();
+            }
+        } finally {
+            reentrantLock.unlock();
         }
     }
 }
