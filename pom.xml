@@ -27,6 +27,7 @@
     <module>algorithm</module>
     <module>system-design</module>
     <module>rxjava</module>
+    <module>sessions</module>
   </modules>
 
   <dependencies>

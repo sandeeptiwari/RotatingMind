@@ -1,5 +1,8 @@
 package com.rotatingmind.array.binarysearch_usage;
 
+/**
+ * We have an integer array, we need to find out first and last occurance of a number in that array
+ */
 public class FirstAndLastOccurance {
 
     public static void main(String[] args) {

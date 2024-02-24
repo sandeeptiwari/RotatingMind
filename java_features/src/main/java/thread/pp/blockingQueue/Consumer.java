@@ -13,9 +13,18 @@ public class Consumer implements Runnable {
         while (true) {
             int val;
 
-            /*try {
-                //val = q.
-            } catch ()*/
+            try {
+                val = q.take();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+            System.out.println(Thread.currentThread().threadId()
+            + " extracted " + val);
+
+            if (val == -1) {
+                break;
+            }
         }
     }
 }
