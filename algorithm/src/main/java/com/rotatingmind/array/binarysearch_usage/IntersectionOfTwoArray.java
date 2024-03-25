@@ -1,4 +1,4 @@
-package com.rotatingmind.array;
+package com.rotatingmind.array.binarysearch_usage;
 
 import java.util.ArrayList;
 import java.util.Arrays;

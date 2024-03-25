@@ -3,7 +3,9 @@ package com.rotatingmind.array;
 import java.util.Arrays;
 
 /**
- * Here, to find out the maximum area of a hole, we need a maximum number of consecutive horizontal bars ‘maxHorizontal’ and a maximum consecutive number of vertical bars ‘maxVertical’ that are removed. Once, we can find them, as we know that ‘x’ number of horizontal bars can make ‘x’ + 1 hole free, so using this concept, our maximum hole area will be ('maxHorizonal' + 1) * ('maxVertical' + 1).
+ * Here, to find out the maximum area of a hole, we need a maximum number of consecutive horizontal bars ‘maxHorizontal’ and a maximum consecutive number of vertical bars
+ * ‘maxVertical’ that are removed. Once, we can find them, as we know that ‘x’ number of horizontal bars can make ‘x’ + 1 hole free, so using this concept, our maximum hole area will
+ * be ('maxHorizonal' + 1) * ('maxVertical' + 1).
  *
  *
  * Algorithm:
@@ -44,7 +46,7 @@ import java.util.Arrays;
  */
 public class PrisonToBreak {
 
-    public static int breakThePrison(int[] H, int[] V, int n, int m, int x, int y) {
+    public static int breakThePrison(int[] H, int[] V, int n, int m) {
         boolean[] xBools = new boolean[n + 1];
         Arrays.fill(xBools, true);
 
@@ -59,7 +61,7 @@ public class PrisonToBreak {
             yBools[j] = false;
         }
 
-        int cx =0, xMax = Integer.MIN_VALUE, cy = 0, yMax = Integer.MIN_VALUE;
+        int cx = 0, xMax = Integer.MIN_VALUE, cy = 0, yMax = Integer.MIN_VALUE;
 
         for (int i = 1; i <= n; i++) {
             if (xBools[i]) {
@@ -93,7 +95,7 @@ public class PrisonToBreak {
         int n1 = 6, m1 = 5;
         int x1 = 2, y1 = 2;
 
-        int result = breakThePrison(H1, V1, n1, m1, x1, y1);
+        int result = breakThePrison(H1, V1, n1, m1);
         System.out.println("result :: " + result);
     }
 }

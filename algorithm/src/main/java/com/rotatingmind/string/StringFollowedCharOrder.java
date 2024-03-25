@@ -2,6 +2,45 @@ package com.rotatingmind.string;
 
 public class StringFollowedCharOrder {
 
+
+    // Function to check if characters in the input string
+    // follows the same order as determined by characters
+    // present in the given pattern
+    public static boolean checkPattern(String str, String pattern) {
+        int n = pattern.length();
+        int len = str.length();
+        // if length of pattern is more than length of
+        // input string, return false;
+        if (str.length() < n)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < n -1; i++) {
+            // x, y are two adjacent characters in pattern
+            int x = pattern.charAt(i);
+            int y = pattern.charAt(i + 1);
+
+            // find index of last occurrence of character x
+            // in the input string
+            int last = str.lastIndexOf(x);
+
+            // find index of first occurrence of character y
+            // in the input string
+            int first = str.indexOf(y);
+
+            // return false if x or y are not present in the
+            // input string OR last occurrence of x is after
+            // the first occurrence of y in the input string
+            if (last == -1 || first == -1 || last > first)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
     //axubbxcxbxd
     //abcd
     public static boolean doesFollowOrder(String source, String order) {
@@ -67,7 +106,9 @@ public class StringFollowedCharOrder {
        String pattern = "er";
        String s2 = "axubbxcxbxd";
        String p2 = "abcd";
-        boolean isFollow = follow(s2, p2);
+        String str = "engineers rock";
+        String p3 = "gsr";
+        boolean isFollow = follow(str, p3);
         System.out.println(isFollow);
     }
 }

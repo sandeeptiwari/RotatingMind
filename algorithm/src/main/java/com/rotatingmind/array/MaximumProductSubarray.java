@@ -5,6 +5,28 @@ package com.rotatingmind.array;
 
 public class MaximumProductSubarray {
 
+    public static int maxProductV2(int[] nums) {
+        int n = nums.length;
+        int ans = 1;
+
+        for (int i = 0; i < n; i++) {
+
+            for (int j = i; j < n; j++) {
+                ans = Math.max(ans, getProd(nums, i, j));
+            }
+        }
+        return ans;
+    }
+
+    private static int getProd(int[] a, int i, int j) {
+        int prod = 1;
+        for (int k = i; k <= j; k++) {
+            prod *= a[k];
+        }
+        return prod;
+    }
+
+
     public static int maxProduct(int[] nums) {
        int len = nums.length;
        int l = 1;
@@ -56,7 +78,7 @@ public class MaximumProductSubarray {
 
     public static void main(String[] args) {
         int[] arr = {2,3,-2,4};
-        int prodSum = maxProduct(arr);
+        int prodSum = maxProductV2(arr);
         System.out.println("Max Product Sum :: " + prodSum);
     }
 }

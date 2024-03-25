@@ -1,4 +1,4 @@
-package com.rotatingmind.array;
+package com.rotatingmind.array.buysell;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +30,18 @@ public class BuySellSecond {
         return dp[index][b];
     }
 
+
+    public static int maxProfit(int[] prices) {
+        int profit = 0;
+        int n = prices.length;
+        for (int i = 1; i < n-1; i++) {
+            if (prices[i] > prices[i-1]) {
+                profit += (prices[i] - prices[i-1]);
+            }
+        }
+        return profit;
+    }
+
     public static void main(String[] args) {
         int[] a = {7,1,5,3,6,4};
         int[][] dp = new int[a.length][2] ;
@@ -40,5 +52,6 @@ public class BuySellSecond {
         }
 
         System.out.println("Profit => " + maxProfit(0, true, a, dp));
+        //System.out.println("Profit => " + maxProfit(a));
     }
 }

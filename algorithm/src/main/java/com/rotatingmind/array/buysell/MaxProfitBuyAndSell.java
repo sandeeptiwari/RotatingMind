@@ -1,4 +1,4 @@
-package com.rotatingmind.array;
+package com.rotatingmind.array.buysell;
 
 
 import javax.crypto.SecretKey;
@@ -17,15 +17,16 @@ public class MaxProfitBuyAndSell {
 
 
     private int maxProfit(int[] prices) {
-        int minProfit = prices[0];
-        int maxProfit = 0;
+        int min = prices[0];
+        int profit = 0;
         int len = prices.length;
 
         for (int i = 1; i < len; i++) {
-            minProfit = Math.min(minProfit, prices[i]);
-            maxProfit = Math.max(maxProfit, prices[i] - minProfit);
+            int diff = prices[i] - min;
+            profit = Math.max(profit, diff);
+            min = Math.min(min, prices[i]);
         }
-        return maxProfit;
+        return profit;
     }
 
 
