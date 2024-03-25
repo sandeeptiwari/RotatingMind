@@ -5,6 +5,51 @@ import java.util.*;
 public class Practice {
 
 
+    private int breakThePrison(int[] H, int[] V, int n, int m) {
+        boolean[] xBool = new boolean[n];
+        Arrays.fill(xBool, true);
+        boolean[] yBool = new boolean[m];
+        Arrays.fill(yBool, true);
+
+        for(int i : H) {
+            xBool[i] = false;
+        }
+        for(int i : V) {
+            yBool[i] = false;
+        }
+
+        int cx = 0, xMax = Integer.MIN_VALUE, cy = 0, yMax = Integer.MIN_VALUE;
+
+        for (int i = 1; i < n; i++) {
+
+            if (xBool[i]) {
+                cx = 0;
+            } else {
+                cx++;
+                xMax = Math.max(cx, xMax);
+            }
+        }
+
+        for (int i = 1; i < m; i++) {
+
+            if (yBool[i]) {
+                cy = 0;
+            } else {
+                cy++;
+                yMax = Math.max(cy, yMax);
+            }
+        }
+
+        return (xMax + 1) * (yMax + 1);
+    }
+
+
+
+
+
+
+
+
     public static void main(String[] args) {
         int[] arr = {-2,1,-3,4,-1,2,1,-5,4};
         int i = maxSumV2(arr);

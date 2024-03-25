@@ -1,4 +1,4 @@
-package com.rotatingmind.array;
+package com.rotatingmind.array.hashmap;
 
 import java.util.Arrays;
 import java.util.HashMap;

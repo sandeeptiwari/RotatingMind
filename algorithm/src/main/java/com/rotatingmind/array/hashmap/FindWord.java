@@ -1,13 +1,21 @@
-package com.rotatingmind.array;
+package com.rotatingmind.array.hashmap;
 
 import java.util.HashMap;
 
 //["R>T", "A>L", "P>O", "O>R", "G>A", "T>U", "U>G"] = PORTUGAL
+
+/**
+ *
+ * A precedence rule is given as "P>E", which means that letter "P" is followed directly by the letter "E".
+ * Write a function, given an array of precedence rules, that finds the word represented by the given rules.
+ *
+ * Note: Each represented word contains a set of unique characters, i.e. the word does not contain duplicate letters.
+ */
 public class FindWord {
 
     public static void main(String[] args) throws Exception {
         String arr[] = {"R>T", "A>L", "P>O", "O>R", "G>A", "T>U", "U>G"};
-        System.out.println(findWord(new String[] { "P>E", "E>R", "R>U" }));
+        /*System.out.println(findWord(new String[] { "P>E", "E>R", "R>U" }));
         System.out.println(findWord(new String[] { "I>N", "A>I", "P>A", "S>P" }));
         System.out.println(findWord(new String[] { "U>N", "G>A", "R>Y", "H>U", "N>G", "A>R" }));
         System.out.println(findWord(new String[] { "I>F", "W>I", "S>W", "F>T" }));
@@ -15,8 +23,8 @@ public class FindWord {
         System.out.println(findWord(new String[] { "U>N", "G>A", "R>Y", "H>U", "N>G", "A>R" }));
         System.out.println(findWord(new String[] { "I>F", "W>I", "S>W", "F>T" }));
         System.out.println(findWord(new String[] { "R>T", "A>L", "P>O", "O>R", "G>A", "T>U", "U>G" }));
-        System.out.println(findWord(new String[] { "W>I", "R>L", "T>Z", "Z>E", "S>W", "E>R", "L>A", "A>N", "N>D", "I>T" }));
-        //System.out.println(findWord(arr));
+        System.out.println(findWord(new String[] { "W>I", "R>L", "T>Z", "Z>E", "S>W", "E>R", "L>A", "A>N", "N>D", "I>T" }));*/
+        System.out.println(findWord(arr));
     }
 
     // time O(3 * n) = O(n) | space O(2 * n) = O(n) - where n is the length of the input string.

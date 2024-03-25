@@ -1,7 +1,7 @@
 package com.rotatingmind;
 
-import com.rotatingmind.array.IntersectionOfTwoArray;
-import com.rotatingmind.array.MostFrequentlyOccurElement;
+import com.rotatingmind.array.binarysearch_usage.IntersectionOfTwoArray;
+import com.rotatingmind.array.hashmap.MostFrequentlyOccurElement;
 import com.rotatingmind.string.NonRepeatingChar;
 import org.junit.jupiter.api.Test;
 

@@ -8,10 +8,7 @@ public class MaxDiff {
     public static void main(String[] args) {
        int arr[] = {3, 5, 2, 1, 7, 4};
 
-       Map<Integer, Integer> map = new HashMap<>();
-       System.out.println(map.get(1));
-
-       System.out.println("Max Diff " + getMaxDiff(arr));
+       System.out.println("Max Diff " + getMaxDiffV2(arr));
     }
 
     private static int getMaxDiff(int arr[]) {
@@ -58,6 +55,25 @@ public class MaxDiff {
             }
         }
 
+        return maxDiff;
+    }
+
+
+    private static int getMaxDiffV2(int[] arr) {
+        int n = arr.length;
+        int minEle = arr[0];
+        int maxDiff = Integer.MIN_VALUE;
+
+        for (int i = 0; i < n; i++) {
+
+            if (arr[i] - minEle > maxDiff) {
+                maxDiff = (arr[i] - minEle);
+            }
+
+            if (arr[i] < minEle) {
+                minEle = arr[i];
+            }
+        }
         return maxDiff;
     }
 

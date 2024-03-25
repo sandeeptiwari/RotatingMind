@@ -5,8 +5,8 @@ public class TreeSearcher
     public static void main(String[] args)
     {
         Node<String> tree = BinaryTreeFactory.constructTree("quick", "brown", "fox", "jumps", "over", "the", "lazy", "dogs", "back");
-        Node<String> node = search(tree, "back");
-        System.out.println(node);
+        Node<String> node = search(tree, "dogs");
+        System.out.println(node.getLabel());
     }
 
     public static Node<String> search(Node<String> node, String label)

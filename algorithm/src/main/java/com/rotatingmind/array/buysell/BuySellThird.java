@@ -1,4 +1,4 @@
-package com.rotatingmind.array;
+package com.rotatingmind.array.buysell;
 
 import java.util.Arrays;
 
@@ -21,7 +21,7 @@ public class BuySellThird {
             profit = Math.max(buyKro, skipKro);
         } else {
             int sellKro = a[i] + maxProfit(a, i + 1, 0, limit-1);
-            int skipKro = 0 + maxProfit(a, i + 1, 0, limit);
+            int skipKro = 0 + maxProfit(a, i + 1, 1, limit);
 
             profit = Math.max(sellKro, skipKro);
         }
