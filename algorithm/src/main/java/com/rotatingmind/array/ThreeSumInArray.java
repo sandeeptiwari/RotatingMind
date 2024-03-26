@@ -72,8 +72,9 @@ public class ThreeSumInArray {
         int[] nums4 = {-2, 0, 0, 2, 2};
         int[] nums5 = {-2, 0, 1, 1, 2};
         int[] nums6 = {-2, 0, 0, 2, 2};
+        int[] nums7 = {-5, 0, 1, 1, 2, 3, 3, 4, 4};
 
-        List<List<Integer>> lists = obj.threeSum(nums2);
+        List<List<Integer>> lists = obj.threeSum(nums7);
         lists.forEach(System.out::println);
     }
 }

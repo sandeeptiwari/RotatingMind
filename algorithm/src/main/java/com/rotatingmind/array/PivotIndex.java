@@ -1,6 +1,5 @@
 package com.rotatingmind.array;
 
-import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class PivotIndex {
@@ -24,7 +23,7 @@ public class PivotIndex {
         int rightSum, leftSum = 0;
 
         rightSum = IntStream.of(nums).sum();
-        System.out.println("right-2 " + rightSum);
+
         if (rightSum == leftSum) return 0;
 
         for (int i = 0; i < nums.length; i++) {

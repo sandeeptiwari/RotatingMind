@@ -9,8 +9,10 @@ public class  MoveAllZeroToTheEndMaintainOrder {
         int arr1[] = {0, 1, 0, 0, 0, 10};
        // moveZero1(arr);
         int arr2[] = {4, 8, 6, 0, 2, 0, 1, 15, 12, 0};
-        moveZeroEnd(arr2, arr2.length);
-        Arrays.stream(arr2).forEach(ele -> System.out.print(ele + " "));
+        //moveZeroEnd(arr, arr.length);
+
+        moveZero(arr);
+        Arrays.stream(arr).forEach(ele -> System.out.print(ele + " "));
     }
 
     //0, 0, 8, 5, 10, 0, 0, 20, 0

@@ -38,6 +38,43 @@ public class FindMinimumInRotatedSortedArray {
         return nums[0];
     }
 
+    public int findMinV1(int[] nums) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        int n = nums.length;
+
+        for (int i = 0; i < n; i++) {
+
+            if (min > nums[i]) {
+                min = nums[i];
+            }
+
+            if (max < nums[i]) {
+                max = nums[i];
+            }
+        }
+
+        if (min == nums[0] && max == nums[nums.length - 1]) return min;
+
+        int rotationCount = 1;
+
+        while(min != nums[0] && max != nums[nums.length - 1]) {
+            rotateByOne(nums);
+            rotationCount++;
+        }
+        return nums[0];
+    }
+
+    public void rotateByOne(int[] a) {
+        int n = a.length;
+        int t = a[n-1];
+        for (int i = n-2; i >= 0 ; i--) {
+            a[i+1] = a[i];
+        }
+        a[0] = t;
+    }
+
     public static void main(String[] args) {
         FindMinimumInRotatedSortedArray findMinimumInRotatedSortedArray = new FindMinimumInRotatedSortedArray();
         int[] nums = {3,4,5,1,2};
