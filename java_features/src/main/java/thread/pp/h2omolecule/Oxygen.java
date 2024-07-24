@@ -1,7 +1,5 @@
 package thread.pp.h2omolecule;
 
-import thread.pp.semaphore.Semaphore;
-
 public class Oxygen implements Runnable {
 
     private final H2OSemaphore semaphore;

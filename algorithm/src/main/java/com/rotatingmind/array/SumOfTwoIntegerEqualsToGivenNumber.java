@@ -58,11 +58,11 @@ public class SumOfTwoIntegerEqualsToGivenNumber {
         Map<Integer, Integer> keyByIndex = new HashMap<>();
 
         for (int i = 0; i < a.length; i++) {
-            int key = targetSum - a[i];
+            int complement = targetSum - a[i];
             if (keyByIndex.containsKey(a[i])) {
-                pairs.add(new Pair(a[i], key));
+                pairs.add(new Pair(a[i], complement));
             } else {
-                keyByIndex.put(key, a[i]);
+                keyByIndex.put(complement, a[i]);
             }
         }
         return pairs;

@@ -1,5 +1,7 @@
 package thread.pp.second;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Worker implements Runnable {
     private final NumberStore numberStore;
     private final Object lock;
@@ -8,6 +10,8 @@ public class Worker implements Runnable {
         this.numberStore = numberStore;
         this.lock = lock;
     }
+
+
 
     @Override
     public void run() {

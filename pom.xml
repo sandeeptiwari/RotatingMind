@@ -28,6 +28,7 @@
     <module>system-design</module>
     <module>rxjava</module>
     <module>sessions</module>
+    <module>uber-interview</module>
   </modules>
 
   <dependencies>

@@ -1,0 +1,40 @@
+
+// Quick discussion of 5 mins (warm up)
+Given a sorted integer array and an integer key,
+find the first and last occurance of key in array
+for ex: 1 1 2 2 2 3 4 4
+
+
+
+Given a sorted rotated integer array of distinct elements and an integer key,
+find index of key
+for ex: 6 7 1 2 3 4 5
+
+
+
+Given a sorted integer array of n elements
+n >= 2
+all elements from [1, n - 1] are present only once except 1 element which occurs twice
+find that element which is repeating or occurs twice
+for ex: 1 2 3 3 4
+
+
+
+Given an integer array
+find peak in array
+a element is peak
+iff element >= left_adj_element
+    ans element >= right_adj_element
+
+for ex: 10 20 15 2 23 90 67
+
+
+
+
+
+extra problem:
+Given an unsorted array
+all elements come in a pair together except one.
+find that single element
+
+for ex: 4 4 1 1 3 7 7 6 6

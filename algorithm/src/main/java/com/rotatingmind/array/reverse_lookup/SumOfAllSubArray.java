@@ -33,6 +33,7 @@ public class SumOfAllSubArray {
                 sum += a[j];
                 ans += sum;
             }
+            System.out.println("sum of sub array " + sum);
         }
         return ans;
     }
@@ -47,7 +48,7 @@ public class SumOfAllSubArray {
     }
 
     public static void main(String[] args) {
-        int[] a = {1, 2, 3};
-        System.out.println(totalSumV2 (a));
+        int[] a = {1, 2, 3, 4};
+        System.out.println(totalSumV1 (a));
     }
 }

@@ -2,8 +2,6 @@ package com.rotatingmind.array.precompute;
 
 public class ArrayRotationByKRotation {
 
-
-
     public void oneUnitOfRotation(int[] a) {
         int l = a.length;
         int temp = a[l-1];

@@ -45,17 +45,6 @@ public class Practice {
 
 
 
-
-
-
-
-
-    public static void main(String[] args) {
-        int[] arr = {-2,1,-3,4,-1,2,1,-5,4};
-        int i = maxSumV2(arr);
-        System.out.println("Result " + i);
-    }
-
     //Input: nums = [1,2,3,4]
     //Output: [24,12,8,6]
     public static void  productExceptSelf(int[] nums) {
@@ -145,4 +134,77 @@ public class Practice {
         return maxSum;
     }
 
+
+    static int cnt = 0;
+    //consecutive number count
+    public static int countConsecutive(int num) {
+        for (int i = 0; i <= num / 2; i++) {
+            int sum = 0;
+            for (int j = i + 1; j <=  num; j++) {
+                sum += j;
+                if (sum == num) {
+                    cnt++;
+                    break;
+                }
+
+            }
+        }
+        return cnt;
+    }
+
+    /**
+     * 1 2 3 4  5  6  7  8  9  10  11 12  13 14 15
+     * [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120]
+     * @param num
+     * @return
+     */
+    public static int countConsecutiveV1(int num) {
+        int[] pSum = new int[num];
+
+        pSum[0] = 1;
+
+        for (int i = 1; i < num; i++) {
+            pSum[i] = pSum[i-1] + (i + 1);
+        }
+
+
+        for (int i = 0; i < num; i++) {
+            int remaining = pSum[i] - num;
+
+            if (isFound(0, i, pSum, remaining) >= 0) {
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+    //1 3 6 10 15 21 28 36 45 55  66 78  91 105 120
+    public static int isFound(int start, int end, int[] pSum, int num) {
+        int l = start;
+        int h = end;
+
+        while (l <= h) {
+            int mid = (l + h) / 2;
+
+            if (num == pSum[mid]) {
+                return mid;
+            } else if (num > pSum[mid]) {
+                l = mid + 1;
+            } else {
+                h = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+
+    /**
+     *  16 17 18 19 20 21
+     * 1- 1 2 3 4 5 6
+     * 2- 6 7 8
+     * 3- 10 11
+     * @param args
+     */
+    public static void main(String[] args) {
+        System.out.println("Result " + countConsecutiveV1(15));
+    }
 }

@@ -7,7 +7,9 @@ public class LargestAreaRectangle {
     public static int maxArea(int[] heights) {
         int maxAra = Integer.MIN_VALUE;
         int len = heights.length;
+        //next smaller
         int[] nse = new int[len];
+        //previous smaller
         int[] pse = new int[len];
         Deque<Integer> st = new ArrayDeque<>();
 
@@ -22,7 +24,7 @@ public class LargestAreaRectangle {
         }
 
         while (!st.isEmpty()) {
-            nse[st.peek()] = len;
+            nse[st.peek()] = -1;
             st.pop();
         }
 
@@ -37,7 +39,7 @@ public class LargestAreaRectangle {
         }
 
         while (!st.isEmpty()) {
-            pse[st.peek()] = len;
+            pse[st.peek()] = -1;
             st.pop();
         }
 

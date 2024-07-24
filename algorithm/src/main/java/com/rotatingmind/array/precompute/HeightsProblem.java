@@ -7,6 +7,11 @@ import java.util.Scanner;
 
 public class HeightsProblem {
 
+    /**
+     * Correct solution
+     * @param a
+     * @return
+     */
    public int trapWater(int[] a) {
        int l = a.length;
        int[] prefixMax = new int[l];
@@ -20,13 +25,12 @@ public class HeightsProblem {
            prefixMax[i] = Math.max(prefixMax[i-1], a[i]);
        }
 
-       for (int i = l-1; i >= 0; i--) {
+       for (int i = l-2; i >= 0; i--) {
            suffixMax[i] = Math.max(suffixMax[i+1], a[i]);
        }
 
        for (int i = 1; i < l-1; i++) {
-
-           int decH = Math.min(prefixMax[i-1], suffixMax[i + 1]);
+           int decH = Math.min(prefixMax[i], suffixMax[i]);
 
            if(decH > a[i]) {
                totalHeights += (decH - a[i]);

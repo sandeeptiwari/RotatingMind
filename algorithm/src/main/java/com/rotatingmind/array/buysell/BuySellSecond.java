@@ -3,31 +3,37 @@ package com.rotatingmind.array.buysell;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * We can buy and sell the stock any number of times.
+ * In order to sell the stock, we need to first buy it on the same or any previous day.
+ * We can’t buy a stock again after buying it once. In other words, we first buy a stock and then sell it. After selling
+ * we can buy and sell again. But we can’t sell before buying and can’t buy before selling any previously bought stock.
+ */
 public class BuySellSecond {
 
-    public static int maxProfit(int index, boolean buy, int[] prices, int[][] dp) {
+    public static int maxProfit(int index, int buy, int[] prices, int[][] dp) {
         if (index == prices.length) {
             return 0;
         }
-        int b = buy ? 1 : 0;
-        if (dp[index][b] != -1) {
-            return dp[index][b];
+       if (dp[index][buy] != -1) {
+            return dp[index][buy];
         }
         int profit = 0;
 
-        if (buy) {
-            int buyKaro = -prices[index] + maxProfit(index+1, !buy, prices, dp);
+        if (buy == 0) {
+            int buyKaro = -prices[index] + maxProfit(index+1, 1, prices, dp);
             int skipKaro = (0 + maxProfit(index + 1, buy, prices, dp));
 
             profit = Math.max(buyKaro, skipKaro);
         } else {
-            int sellKaro = prices[index] + maxProfit(index+1, !buy, prices, dp);
-            int skipKaro = (0 + maxProfit(index + 1, buy, prices, dp));
+            int sellKaro = prices[index] + maxProfit(index+1, 0, prices, dp);
+            int skipKaro = (0 + maxProfit(index + 1, 1, prices, dp));
 
             profit = Math.max(sellKaro, skipKaro);
         }
-        dp[index][b] = profit;
-        return dp[index][b];
+        dp[index][buy] = profit;
+        return dp[index][buy];
     }
 
 
@@ -51,7 +57,7 @@ public class BuySellSecond {
             }
         }
 
-        System.out.println("Profit => " + maxProfit(0, true, a, dp));
+        System.out.println("Profit => " + maxProfit(0, 0, a, dp));
         //System.out.println("Profit => " + maxProfit(a));
     }
 }

@@ -5,7 +5,7 @@ import com.rotatingmind.food.data.FoodItem;
 import com.rotatingmind.food.data.Restaurant;
 import com.rotatingmind.food.data.StarRating;
 
-public class StarRatingFilter implements FoodItemFilter, RestaurantFilter{
+public class StarRatingFilter implements FoodItemFilter, RestaurantFilter {
 
     private final StarRating rating;
 

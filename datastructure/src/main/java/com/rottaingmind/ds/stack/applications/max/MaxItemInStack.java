@@ -2,7 +2,7 @@ package com.rottaingmind.ds.stack.applications.max;
 
 import java.util.Stack;
 
-public class MaxItemInStack {
+public class  MaxItemInStack {
     private Stack<Integer> mainStack;
     private Stack<Integer> maxStack;
 

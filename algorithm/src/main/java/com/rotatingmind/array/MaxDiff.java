@@ -6,9 +6,23 @@ import java.util.Map;
 public class MaxDiff {
 
     public static void main(String[] args) {
-       int arr[] = {3, 5, 2, 1, 7, 4};
+       int a[] = {3, 5, 2, 1, 7, 4};
+       int n = a.length;
 
-       System.out.println("Max Diff " + getMaxDiffV2(arr));
+       int min = a[0];
+       int diff = 0;
+       int maxDiff = Integer.MIN_VALUE;
+
+        for (int i = 1; i < n; i++) {
+            diff = a[i] - min;
+            maxDiff = Math.max(maxDiff, diff);
+            min = Math.min(a[i], min);
+        }
+
+        System.out.println("Max Diff " + maxDiff);
+
+
+      // System.out.println("Max Diff " + getMaxDiffV2(a));
     }
 
     private static int getMaxDiff(int arr[]) {

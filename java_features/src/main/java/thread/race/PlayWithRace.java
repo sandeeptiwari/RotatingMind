@@ -13,10 +13,10 @@ public class PlayWithRace {
     }
 
     /**
-     * here state of total object is sharing among more than one thread at time
+     * here state of total object is sharing among more than one thread at a time
      * So it got corrupted very soon.
      *
-     * Different threads are running this mul method in parallel on the sam object
+     * Different threads are running this mul method in parallel on the same object
      * & when we do the total times equal n operation in the mul method.
      *
      * That will end up potentially and almost certainly corrupting the state of the total field,

@@ -7,7 +7,10 @@ import com.rotatingmind.math.Groups;
 import com.rotatingmind.array.LargestElementInArray;
 import com.rotatingmind.array.NonRepeatingNumber;
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -129,5 +132,45 @@ public class AppTest {
 
         boolean rotation3 = obj.isRotation(array1, array2f);
         assertFalse(rotation3);
+    }
+
+    @Test
+    public void twoSumToGivenNumber() {
+        int[] a = {1, 2, 4, 4};
+        int target = 8;
+        int n = a.length;
+        int i = 0;
+        int j = n -1;
+
+        while (i < j) {
+            int sum = a[i] + a[j];
+
+            if (sum == target) {
+                System.out.println("Found i " + i + " j  " + j);
+                break;
+            } else if (a[i] + a[j] < target) {
+                i++;
+            } else {
+                j--;
+            }
+        }
+    }
+
+    @Test
+    public void twoSumToGivenNumberV1() {
+        Map<Integer, Integer> map = new HashMap<>();
+        int[] a = {1, 2, 7, 3, 4, 2, 5};
+        int target = 8;
+        int n = a.length;
+
+        for (int i = 0; i < n; i++) {
+            int complement = target - a[i];
+
+            if (map.get(complement) != null) {
+                System.out.println("Found i " + i + " j  " + map.get(complement));
+                break;
+            }
+            map.put(a[i], i);
+        }
     }
 }

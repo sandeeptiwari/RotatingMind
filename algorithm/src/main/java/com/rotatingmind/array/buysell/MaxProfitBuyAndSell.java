@@ -16,7 +16,7 @@ import javax.crypto.SecretKey;
 public class MaxProfitBuyAndSell {
 
 
-    private int maxProfit(int[] prices) {
+    private static int maxProfit(int[] prices) {
         int min = prices[0];
         int profit = 0;
         int len = prices.length;
@@ -29,8 +29,13 @@ public class MaxProfitBuyAndSell {
         return profit;
     }
 
+    public static void main(String[] args) {
+        int[] a = {7,1,5,3,6,4};
+        System.out.println(maxProfit(a));
+    }
 
-    /*public static void main(String[] args) {
+
+   /* public static void main(String[] args) {
         SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
         String secretString = Encoders.BASE64.encode(key.getEncoded());
         System.out.println("Secret key: " + secretString);
