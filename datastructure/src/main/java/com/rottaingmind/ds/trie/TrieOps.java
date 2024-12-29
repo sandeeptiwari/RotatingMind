@@ -30,4 +30,31 @@ public class TrieOps {
         }
         return currNode.isEndOfWord();
     }
+
+
+    /**
+     * Find all string by given prefix
+     * @param prefix
+     *
+     * Given a node, find how many nodes in its subtree have isString = true
+     *
+     * at any node counter will hold total number of string in that path
+     *
+     */
+    public int find(String prefix, int pos, Node root) {
+
+        if(root == null) return 0;
+
+        if (pos == prefix.length()) {
+            return root.getNumOfSubTree();
+        }
+
+        return find(prefix, pos + 1, root.getChildrens()[prefix.charAt(pos) - 'a'] );
+    }
+
+    public Node insert(String charAtNode, Node root) {
+
+
+     return null;
+    }
 }

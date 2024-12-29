@@ -26,7 +26,7 @@ public class ReadWriteLock {
         }
         int cnt = entryCounts.getOrDefault(Thread.currentThread(), 0);
 
-        entryCounts.put(Thread.currentThread(), cnt+1);
+        entryCounts.put(Thread.currentThread(), cnt + 1);
         System.out.println(Thread.currentThread().getName() + " acquired read lock");
     }
 
@@ -48,9 +48,8 @@ public class ReadWriteLock {
         int cnt = entryCounts.get(Thread.currentThread());
 
         if(cnt > 1){
-            entryCounts.put(Thread.currentThread(), cnt-1);
-        }
-        else{
+            entryCounts.put(Thread.currentThread(), cnt - 1);
+        } else {
             entryCounts.remove(Thread.currentThread());
             notifyAll();
             System.out.println(Thread.currentThread().getName() + " released read lock");

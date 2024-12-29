@@ -50,7 +50,7 @@ public class AllocateBooks {
         int h = Arrays.stream(books).sum();; // sum of all ele of books
 
         while (l <= h) {
-            int mid = l + (h -l) / 2;
+            int mid = l + (h - l) / 2;
 
             boolean r = isPoss(books, mid, studs);
 
@@ -110,12 +110,12 @@ public class AllocateBooks {
     }
 
     public static void main(String[] args) {
-        //int[] a = {1, 2, 3, 4, 5};
+        int[] a = {1, 2, 3, 4, 5};
         //int[] a = {2,3,1,2,4,3};
         //int [] a = {1,4,4};
-        int a[] = {2,3,1,1,1,1,1}; //3
-        //int allocation = splitArray(a, 5);
-        int allocation = allocation(a, 5);
+        //int a[] = {2,3,1,1,1,1,1}; //3
+        int allocation = splitArray(a, 3);
+        //int allocation = allocation(a, 3);
         System.out.println("Min allotted book " + allocation);
     }
 }

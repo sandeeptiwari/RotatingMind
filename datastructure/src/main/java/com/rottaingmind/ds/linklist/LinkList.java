@@ -94,9 +94,9 @@ public class LinkList<T extends Comparable<T>> implements List<T> {
     // 4 -> 3 -> 2-> 1
     @Override
     public void reverse() {
+        Node<T> next = null;
         Node<T> current = root;
         Node<T> previous = null;
-        Node<T> next = null;
 
         while (current != null) {
             next = current.getNextNode();

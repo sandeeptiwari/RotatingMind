@@ -13,9 +13,9 @@ public class ComparableDemo {
         Employee e3 = new Employee("Peter", 30000);
         Employee e4 = new Employee("James", 2000);
 
-        Function<Employee, String> getName = Employee::getName;
+        Function<Employee, Integer> getName = Employee::getSalary;
         Comparator<Employee> cmp = Comparator.comparing(getName);
 
-        System.out.println(cmp.compare(e2, e1) > 0);
+        System.out.println(cmp.compare(e3, e4) > 0);
     }
 }

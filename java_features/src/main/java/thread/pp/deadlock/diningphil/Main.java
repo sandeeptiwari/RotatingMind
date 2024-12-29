@@ -10,7 +10,7 @@ public class Main {
         Chopstick c5 = new Chopstick(5);
 
         Thread p1 = new Thread(new Philosopher(c1, c2, "Plato"));
-        Thread p2 = new Thread(new Philosopher(c1, c3, "Socrates"));
+        Thread p2 = new Thread(new Philosopher(c2, c3, "Socrates"));
         Thread p3 = new Thread(new Philosopher(c3, c4, "Henry"));
         Thread p4 = new Thread(new Philosopher(c4, c5, "Pythagoras"));
         Thread p5 = new Thread(new Philosopher(c5, c1, "Viveka nand"));

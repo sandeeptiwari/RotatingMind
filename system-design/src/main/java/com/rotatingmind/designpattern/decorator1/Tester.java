@@ -3,7 +3,7 @@ package com.rotatingmind.designpattern.decorator1;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Tester {
+public class Tester extends Object {
 
     public static void main(String[] args) {
 

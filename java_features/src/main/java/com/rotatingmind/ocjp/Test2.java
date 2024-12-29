@@ -9,12 +9,12 @@ public class Test2 {
 
         Predicate<String> p = s -> s.toUpperCase().substring(0,1).equals("A");
 
-        //processStringArray(arr, p);
-
+        processStringArray(arr, p);
+/*
         Thread t = new Thread(() -> {
             System.out.println("Hi");
         });
-        t.start();
+        t.start();*/
     }
 
     private static void processStringArray(String [] arr,

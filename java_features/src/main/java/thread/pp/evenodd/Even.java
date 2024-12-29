@@ -17,7 +17,9 @@ public class Even implements Runnable {
             while (Main.num >= 0) {
                 while (Main.num % 2 != 0 || Main.curr != 0) {
                     try {
+                        System.out.println("waiting1111");
                         lock.wait();
+                        System.out.println("waiting2222");
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
@@ -28,6 +30,5 @@ public class Even implements Runnable {
                 lock.notifyAll();
             }
         }
-
     }
 }

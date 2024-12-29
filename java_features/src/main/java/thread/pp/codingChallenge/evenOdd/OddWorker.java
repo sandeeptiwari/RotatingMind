@@ -13,10 +13,10 @@ public class OddWorker implements Runnable {
     @Override
     public void run() {
 
-        while(compare()){
-            synchronized (lock){
-                if(EvenOddSimulator.curr > EvenOddSimulator.limit) break;
-                if(EvenOddSimulator.curr%2 != 0){
+        while (compare()) {
+            synchronized (lock) {
+                if (EvenOddSimulator.curr > EvenOddSimulator.limit) break;
+                if (EvenOddSimulator.curr % 2 != 0) {
                     System.out.println(type + " " + EvenOddSimulator.curr);
                     EvenOddSimulator.curr++;
                 }
@@ -25,7 +25,7 @@ public class OddWorker implements Runnable {
     }
 
     private boolean compare() {
-        synchronized (lock){
+        synchronized (lock) {
             return EvenOddSimulator.curr <= EvenOddSimulator.limit;
         }
     }

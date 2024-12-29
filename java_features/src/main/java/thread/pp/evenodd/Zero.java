@@ -18,7 +18,9 @@ public class Zero implements Runnable {
             while (Main.num >= 0) {
                 while (Main.curr != 0) {
                     try {
+                        System.out.println("waiting000---");
                         lock.wait();
+                        System.out.println("waiting---0000");
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }

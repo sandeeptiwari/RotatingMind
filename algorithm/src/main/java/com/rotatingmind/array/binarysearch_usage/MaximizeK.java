@@ -18,7 +18,22 @@ public class MaximizeK {
       return false;
     }
 
-    public boolean isPossible(int[] a, int mid, int x) {
+    public static int maxK(int[] arr, int k, int n){
+        int s = 0;
+        int e = n;
+        while(s <= e){
+            int m = s+(e-s)/2;
+            if(!isPossible(arr, m, k)){
+                e = m-1;
+            }else{
+                if(!isPossible(arr, m+1, k)) return m;
+                else s = m+1;
+            }
+        }
+        return -1;
+    }
+
+    public static boolean isPossible(int[] a, int mid, int x) {
         int sum = 0;
 
         for (int i = 0; i < mid  ; i++) {
@@ -36,7 +51,7 @@ public class MaximizeK {
         while(start < end) {
             sum -= a[start];
             start++;
-            end++;
+            end--;
             sum += a[end];
             if (sum > x) {
                 return false;
