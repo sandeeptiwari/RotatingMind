@@ -35,5 +35,7 @@ public class ReverseStack {
         reverse(temp);
 
         System.out.println(temp.pop());
+        System.out.println(temp.pop());
+        System.out.println(temp.pop());
     }
 }

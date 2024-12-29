@@ -1,9 +1,13 @@
 package com.rottaingmind.ds.linklist;
 
+import java.util.Objects;
+
 public class Node<T extends Comparable<T>> {
 
     private T data;
     private Node<T> nextNode;
+    private Node<T> random;
+    private Node<T> down;
 
     public Node() {
 
@@ -28,10 +32,26 @@ public class Node<T extends Comparable<T>> {
         this.nextNode = nextNode;
     }
 
+    public Node<T> getRandom() {
+        return random;
+    }
+
+    public Node<T> getDown() {
+        return down;
+    }
+
+    public void setDown(Node<T> down) {
+        this.down = down;
+    }
+
+    public void setRandom(Node<T> random) {
+        this.random = random;
+    }
+
     @Override
     public String toString() {
         return "{ "
-                   +data +
+                   + data +
                 " } -> ";
     }
 }

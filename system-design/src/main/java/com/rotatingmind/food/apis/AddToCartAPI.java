@@ -19,11 +19,11 @@ public class AddToCartAPI {
         }
         User user = userManager.getUserByToken(userToken);
         if (user == null) {
-            //
+            //exception
         }
         FoodItem foodItem = foodItemSearcher.searchById(foodItemId);
         if (foodItem == null) {
-
+            // throw exception no food found
         }
         cartManager.addItemToCart(user, foodItem);
     }

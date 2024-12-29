@@ -15,7 +15,9 @@ public class Odd implements Runnable {
             while (Main.num >= 0) {
                 while (Main.num % 2 == 0 || Main.curr != 0) {
                     try {
+                        System.out.println("waiting0000");
                         lock.wait();
+                        System.out.println("waiting3333");
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }

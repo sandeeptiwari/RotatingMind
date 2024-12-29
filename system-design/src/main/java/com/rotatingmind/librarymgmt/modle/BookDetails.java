@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class BookDetails {
+
     private final String name;
 
     private final Date publishDate;

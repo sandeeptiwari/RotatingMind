@@ -14,7 +14,7 @@ public class BookKeeper implements Runnable {
 
     private final BlockingQueue<Runnable> taskQueue;
 
-    public BookKeeper(Set<Integer> deadThreads, List<Thread> threads, BlockingQueue<Runnable> taskQueue) {
+    public   BookKeeper(Set<Integer> deadThreads, List<Thread> threads, BlockingQueue<Runnable> taskQueue) {
         this.deadThreads = deadThreads;
         this.threads = threads;
         this.taskQueue = taskQueue;

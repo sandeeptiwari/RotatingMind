@@ -1,0 +1,1 @@
+1. front > back == impty Queue

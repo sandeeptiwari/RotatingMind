@@ -1,6 +1,12 @@
 package com.rotatingmind.tictactoe;
 
-import com.rotatingmind.tictactoe.model.*;
+import com.rotatingmind.tictactoe.model.Board;
+import com.rotatingmind.tictactoe.model.ComputerPlayer;
+import com.rotatingmind.tictactoe.model.HumanPlayer;
+import com.rotatingmind.tictactoe.model.IPlayer;
+import com.rotatingmind.tictactoe.model.Move;
+import com.rotatingmind.tictactoe.model.Result;
+import com.rotatingmind.tictactoe.model.Symbol;
 
 public class TicTacToe {
 

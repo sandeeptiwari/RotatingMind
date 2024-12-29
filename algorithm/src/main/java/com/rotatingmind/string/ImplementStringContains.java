@@ -8,6 +8,8 @@ public class ImplementStringContains extends Object {
         System.out.println("NamanT Tiwari".contains("Tiwari"));
     }
 
+
+
     public int indexOf1(String srcStr, String targetStr) {
 
         if (srcStr != null && targetStr != null) {

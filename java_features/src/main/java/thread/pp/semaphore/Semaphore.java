@@ -1,5 +1,6 @@
 package thread.pp.semaphore;
 
+//controlling permits
 public class Semaphore {
 
     private int permitsLeft;

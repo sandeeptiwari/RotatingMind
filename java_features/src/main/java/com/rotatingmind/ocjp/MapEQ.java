@@ -27,6 +27,11 @@ class WorkDay {
         this.day = day;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return ((WorkDay)o).day == this.day;
+    }
+
    /* @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -35,8 +40,8 @@ class WorkDay {
         return Objects.equals(day, workDay.day);
     }*/
 
-    @Override
-    public int hashCode() {
-        return 1;
-    }
+  //  @Override
+   // public int hashCode() {
+       // return 1;
+   // }
 }

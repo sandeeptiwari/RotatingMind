@@ -20,6 +20,10 @@ public class PlayWithRecursion {
         recursion.floodFill(a, 4, 3, 3, 2);
         recursion.printMatrix(a);*/
 
+        String s = "sandeep";
+
+        System.out.println();
+
        // recursion.permutations("abc", 0, 2);
 
         int a[] = {1, 5, 7, 3, 2, 4};

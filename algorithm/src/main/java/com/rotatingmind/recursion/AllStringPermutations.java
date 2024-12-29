@@ -23,4 +23,21 @@ public class AllStringPermutations {
             printPermutations(restOfQuestion, ansf + ch);
         }
     }
+
+    public static void permuteAndPrint(String str) {
+        permuteAndPrint("", str);
+    }
+
+    private static void permuteAndPrint(String prefix, String str) {
+        int n = str.length();
+        if (n == 0) {
+            System.out.println(prefix+ " ");
+        } else {
+            for (int i = 0; i < n; i++) {
+                permuteAndPrint(prefix + prefix.charAt(i), str.substring(0, i) + "" + str.substring(i+1, n));
+            }
+        }
+    }
+
+
 }

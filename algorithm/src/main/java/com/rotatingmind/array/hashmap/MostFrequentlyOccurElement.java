@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class MostFrequentlyOccurElement {
+public class  MostFrequentlyOccurElement {
 
     public long getMostFrequentElement(int[] arr) {
 

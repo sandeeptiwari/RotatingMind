@@ -20,7 +20,7 @@ public class ReverseWord {
             reverseString.append(reverseWord).append(WHITESPACE);
         }
 
-        return reverseString.reverse().toString();
+        return reverseString.toString();//.reverse().toString();
     }
 
     public static String reverseWordsV1(String str) {
@@ -31,6 +31,6 @@ public class ReverseWord {
     }
 
     public static void main(String[] args) {
-        System.out.println(reverseWordsV1("the sky is blue"));
+        System.out.println(reverseWords("the sky is blue"));
     }
 }

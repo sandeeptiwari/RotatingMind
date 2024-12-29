@@ -7,7 +7,7 @@ import java.util.*;
  * <p>
  * A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
  */
-public class LetterCombinationsOfAPhoneNumber {
+public class  LetterCombinationsOfAPhoneNumber {
 
     public static List<String> letterCombinations(String digits) {
         if (digits.isEmpty()) {
