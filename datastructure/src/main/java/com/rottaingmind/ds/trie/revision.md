@@ -1,0 +1,12 @@
+https://www.spoj.com/problems/XORX/
+https://www.hackerrank.com/contests/w8/challenges/black-box-1
+https://leetcode.com/problems/count-pairs-with-xor-in-a-range/
+https://www.geeksforgeeks.org/problems/maximum-xor-subarray--141631/1
+https://www.geeksforgeeks.org/problems/minimum-xor-value-pair/1?problemType=functional&page=1&sortBy=submissions&category%5B%5D=Trie&query=problemTypefunctionalpage1sortBysubmissionscategory%5B%5DTrie
+https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/description/
+https://leetcode.com/problems/map-sum-pairs/description/
+https://www.geeksforgeeks.org/problems/phone-directory4628/1?problemType=functional&page=1&sortBy=submissions&category%5B%5D=Trie&query=problemTypefunctionalpage1sortBysubmissionscategory%5B%5DTrie
+https://www.geeksforgeeks.org/problems/shortest-unique-prefix-for-every-word/1?problemType=functional&page=1&sortBy=submissions&category%5B%5D=Trie&query=problemTypefunctionalpage1sortBysubmissionscategory%5B%5DTrie
+https://www.geeksforgeeks.org/problems/geek-and-strings3030/1?problemType=functional&page=1&sortBy=submissions&category%5B%5D=Trie&query=problemTypefunctionalpage1sortBysubmissionscategory%5B%5DTrie
+https://www.geeksforgeeks.org/problems/trie-delete/1?problemType=functional&page=1&sortBy=submissions&category%5B%5D=Trie&query=problemTypefunctionalpage1sortBysubmissionscategory%5B%5DTrie
+https://leetcode.com/problems/implement-trie-prefix-tree/description/
