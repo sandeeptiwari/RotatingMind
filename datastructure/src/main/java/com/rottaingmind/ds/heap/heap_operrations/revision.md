@@ -50,9 +50,7 @@ For building the tree data structures, we will take the help of an array. We wil
 
 Let’s see this example:
 
- 
-
-![img.png](img.png)
+![img_14.png](img_14.png)
 
 For a particular indices I, if we consider array as 0 based indexing the left child  of I will be (2 * I + 1)th index , right child will be (2 * I + 2)th index (eg. 0th left child will be 2 * 0 + 1 = 1 , right will be 2 * 0 + 2 = 2) .
 
@@ -82,9 +80,9 @@ Max Heap:- in max heap, the maximum element will be the root of the tree.
 
 Now in our problem,
 
-We can insert and delete the element in heap data structures in O(log2N) time for the balanced binary tree because the maximum height of the balanced binary tree can be log2N only. We can get max elements in heap at O(1) time which is an efficient solution than brute force.
+We can insert and delete the element in heap data structures in O(log2N) time for the balanced binary tree because the maximum height of the balanced binary tree can be log2N only. We can get max elements in heap at O(1) time which is an efficient solution than brute force.  
 
-Building a Max Heap - 1
+### Building a Max Heap - 1
 For max heap, every root value should be greater than or equal to its left and right child.
 
 Consider an array [A,B,C,D,E,F,G,H,I]
@@ -92,8 +90,7 @@ Consider an array [A,B,C,D,E,F,G,H,I]
 
 
 The tree representation of an array will be: 
-
-![img_1.png](img_1.png)
+![img_15.png](img_15.png)
 
 The above tree will work as max heap if and only if:
 
@@ -145,8 +142,7 @@ Let's consider an example
 
 Tree representation of the above array will be:  
 
-![img_2.png](img_2.png)
-
+![img_16.png](img_16.png)
 The above tree will work as max heap if and only the max heap condition will be satisfied.
 
 So by building a max heap we can run a loop from 0 to n-1 and for every node, check its parent. If the parent value is lesser than the current node then do a swap and do the same for its parents as well.
@@ -181,9 +177,9 @@ Time complexity -> O(NlogN)  , swapPr operation takes
 
 logN time in the worst case for a balanced binary tree.  
 
-![img_3.png](img_3.png)
+![img_17.png](img_17.png)
 
-Building a Max Heap - 2
+### Building a Max Heap - 2
 In the previous approach, we took O(NlogN) time to build a max heap.
 
 Can we do better?
@@ -192,7 +188,7 @@ Let’s suppose an array [1 , 70 , 65 , 44 , 22 , 10, 3].
 
 Tree representation of the given array will be
 
- ![img_4.png](img_4.png)
+![img_18.png](img_18.png)
 
 In the figure, If we look carefully, we will find that the left and right subtree of root 1 is already a max heap.
 
@@ -200,14 +196,13 @@ Only 1 is not in its correct position in the max heap.
 
 So we can bring the correct root by swapping the max value from the left and right child of root 1.
 
-![img_5.png](img_5.png)
+![img_19.png](img_19.png)
 
 After swapping the max value from the left and the right child, we get the above tree.
 
 In the above tree, a root with value 1 subtree is disturbing the property of max heap for the whole tree. so we can do the same swap operation for this tree as well.
 
-![img_6.png](img_6.png)
-
+![img_20.png](img_20.png)
 Now this tree is a max heap.
 
 By the above mentioned example, we can conclude for any root if its left and the right child is a max heap by doing a swap operation and we can change the given tree into a max heap. This swapping operation is known as the Heapify operation in heap.
@@ -265,15 +260,11 @@ Dry Run:-
 
 Let’s consider an array [ 2, 4 , 3, 6, 7, 9 ] 
 
-![img_7.png](img_7.png)
+ ![img_21.png](img_21.png)
+ ![img_22.png](img_22.png)
+ This last tree for i = 1  will be the final max heap.
 
-![img_8.png](img_8.png)
-
-This last tree for i = 1  will be the final max heap.
-
-
-
-Heap Operations
+### Heap Operations
 1.GetMax :- for finding the max value in max heap , return the root element of the tree, means arr[1] { 1 based indexing or arr[0] -> 0 based indexing }
 
 Time complexity -> O(1)
@@ -281,18 +272,14 @@ Time complexity -> O(1)
 2. Insert:-  Insert the element at the last position in the array, this can be done by O(1). After inserting the element at the last position, do a bubbling up operation or swap operation for making this tree as max heap.
 
 Let’s consider a max heap array [10 ,4, 7,1 ,2 , 5] 
-
-![img_9.png](img_9.png)
-
+![img_23.png](img_23.png)
 Now, we have to insert x = 15 into the max heap. 
-
-![img_10.png](img_10.png)
-
+![img_24.png](img_24.png)
 After the addition of 15, the max heap property has gotten violated here.
 
-To make this as the max heap again, we can do a bubbling operation or swapping operation.
+To make this as the max heap again, we can do a bubbling operation or swapping operation
 
-![img_11.png](img_11.png)
+![img_25.png](img_25.png)
 
 Now, this is a max heap after insertion.
 
@@ -306,19 +293,16 @@ After this, our max heap will be disturbed and we will do the maxHeapify operati
 
 Let's consider this max heap
 
-![img_12.png](img_12.png)
+![img_26.png](img_26.png)
 
 We will delete element 15, so swap 15 and 7.
 
 Now reduce the size of the array and perform maxHeapify Operation.
 
 After swap, the heap will be like this. 
-
-![img_13.png](img_13.png)
-
+![img_27.png](img_27.png)
 After maxHeapify, our maxHeap will not contain the deleted element and follow the max heap properties.
-
-![img_15.png](img_15.png)
+![img_28.png](img_28.png)
 
 Delete at particular Index:-
 
@@ -336,7 +320,7 @@ Now apply the above root deletion method.
 
 We can also use another method for deletion at a particular root, by swapping the element at a particular index with the last element. Perform bubbling up and maxHeapify operation for this index. This shall be able to delete the node at particular indices.
 
-Priority Queue
+### Priority Queue
 A priority queue is an inbuilt heap in programming languages. It is by default a max heap.
 
 Functionality :-
@@ -374,6 +358,7 @@ Algorithm:-
 
 Build a max heap with all elements.
 
+
 Pop top k element.
 
 Time complexity -> O(N) + O(k * log(N))
@@ -390,6 +375,8 @@ Algorithm:-
 
 
 Multiply -1 with all the arr elements.
+
+
 Build the max heap.
 
 
@@ -406,7 +393,7 @@ Let’s revise the concept of custom comparators function in sorting algorithms.
 
 comp(a,b) {
 
-Return true if  you want a before b 
+Return true if  you want a before b
 
 Return false if you want a after b in the sorted output.
 
@@ -449,12 +436,13 @@ Return a > b;
 
 }
 
-Heap Sort
+### Heap Sort
 There is an obvious way to do sorting with priority queues: Take the items that you want to sort and insert them into the priority queue (using the item itself as its own priority). Then remove items from the priority queue until it is empty. The items will come off the queue in order from largest to smallest. We can use custom comparators to sort according to our choice. Like, for sorting in ascending order we can use min-heap.
 
 Time complexity: O(Nlog(N))
 
-K Closest Points on X-Y plane
+### K Closest Points on X-Y plane
+
 We are given a list of points on the 2-D plane and an integer K. Find K closest points to the origin.
 
 Input: point = [[3, 3], [5, -1], [-2, 4]], K = 2
@@ -491,7 +479,7 @@ priority_queue<pair<int, int>, vector<pair<int, int> >, comp> pq (points.begin()
 
 Time Complexity: O(N + K * log(N))
 
-Auxiliary Space: O(N)
+Auxiliary Space: O(N) 
 
 Tying Ropes
 We are given n ropes of different lengths, we need to connect these ropes into one rope. The cost to connect two ropes is equal to the sum of their lengths. Find the minimum cost to tie all the ropes together.
@@ -922,6 +910,3 @@ return nums.back();
 Time Complexity: O(n*log(n))
 
 Space Complexity: O(n) 
-
-https://www.geeksforgeeks.org/rearrange-a-string-so-that-all-same-characters-become-at-least-d-distance-away/
-https://leetcode.com/problems/task-scheduler/description/
