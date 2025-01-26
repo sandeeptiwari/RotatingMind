@@ -299,3 +299,47 @@ Category 1: n1^x^x^y^y^z^z = n1
 Category 2: n2^p^p = n2
 
 Time complexity: O(N) 
+
+Assignments:
+https://leetcode.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/
+https://leetcode.com/problems/decode-xored-permutation/
+Missing and Repeating Integers
+markAsDonemarkForRevisionmarkForLater
+Given an unsorted array arr of size N of positive integers. One number A from set {1, 2, …N} is missing and one number B occurs twice in array. Find these two numbers.
+
+Input Format
+The first line contains a single integer N denoting the size of the array.
+
+The second line contains N space-separated integers denoting the elements of the array.
+
+Output Format
+Two separated integers first being the Repeated number and other will be the missing integer.
+https://www.codechef.com/JULY20B/problems/PTMSSNG
+https://www.codechef.com/problems/LIKECS03
+https://leetcode.com/problems/single-number-iii/description/
+https://codeforces.com/problemset/problem/424/C
+https://leetcode.com/problems/xor-queries-of-a-subarray/description/
+https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero/description/
+https://leetcode.com/problems/gray-code/description/
+https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/description/
+https://www.hackerrank.com/contests/codeagon/challenges/bob-and-subarray-or
+https://leetcode.com/problems/total-hamming-distance/description/
+https://leetcode.com/problems/single-number-ii/description/
+
+Number occurring once-1
+markAsDonemarkForRevisionmarkForLater
+Given a sorted array arr[] of N positive integers having all the numbers occurring exactly twice, except for one number which will occur only once. Find the number occurring only once.
+
+Input Format
+
+The first line contains a single integer N denoting the size of the array.
+The second line contains N space-separated integers denoting the elements of the array.
+Output Format
+
+Print the number which occurs only once in the array.
+Input 1:
+
+https://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/description/
+https://leetcode.com/problems/bitwise-and-of-numbers-range/description/
+https://leetcode.com/problems/number-of-1-bits/description/
+https://leetcode.com/problems/power-of-two/description/

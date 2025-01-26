@@ -259,4 +259,25 @@ We can compare the product of n1, n2 and n3 with the elements pointed by  p1, p2
 Time complexity: O(N)
 Space complexity: O(N)
 
+Assignments:
+
+https://leetcode.com/problems/ugly-number-ii/
+https://www.geeksforgeeks.org/minimize-maxai-bj-ck-minai-bj-ck-three-different-sorted-arrays/
+https://codeforces.com/contest/958/problem/F2
+https://codeforces.com/contest/252/problem/C
+https://leetcode.com/problems/subarrays-with-k-different-integers/description/
+https://www.geeksforgeeks.org/problems/equivalent-sub-arrays3731/1?difficulty%5B%5D=1&page=1&category%5B%5D=two-pointer-algorithm&query=difficulty%5B%5D1difficulty%5B%5D2page1category%5B%5Dtwo-pointer-algorithm
+https://leetcode.com/problems/count-number-of-nice-subarrays/description/
+https://leetcode.com/problems/max-consecutive-ones-iii/description/
+https://leetcode.com/problems/minimum-window-substring/description/
+https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+https://leetcode.com/problems/boats-to-save-people/description/
+https://leetcode.com/problems/container-with-most-water/description/
+https://leetcode.com/problems/3sum-closest/description/
+https://leetcode.com/problems/4sum/description/
+https://leetcode.com/problems/3sum/description/
+https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+https://leetcode.com/problems/remove-element/description/
+https://leetcode.com/problems/intersection-of-two-arrays/description/
 

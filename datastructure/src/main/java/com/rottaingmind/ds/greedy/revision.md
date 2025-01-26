@@ -514,6 +514,18 @@ The path from the root to any leaf node stores the optimal prefix code (also cal
 
 ![img_3.png](img_3.png)
 
+Assignments:
+https://www.geeksforgeeks.org/problems/huffman-encoding3345/1
+https://leetcode.com/problems/sliding-window-median/description/
+https://leetcode.com/problems/maximum-performance-of-a-team/description/
+https://leetcode.com/problems/sliding-window-median/description/
+https://leetcode.com/problems/find-median-from-data-stream/description/
+https://leetcode.com/problems/kth-largest-element-in-a-stream/description/
+https://www.geeksforgeeks.org/job-sequencing-problem-loss-minimization/
+https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1
+https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1
+https://www.hackerrank.com/contests/kilobyte-uz-contest1/challenges/trains-and-platforms/problem
+https://www.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1
 
 
 
