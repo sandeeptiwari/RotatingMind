@@ -17,8 +17,11 @@ So when we are at ith coin
 
 x = N / coins[i]
 
-required amt = amount - x * coins[i]
-9 - 1 * 7  = 2
+required 
+
+    amt = amount - x * coins[i]
+    
+    9 - 1 * 7  = 2
 
 
 This is gready approach which wont work in this case every time, for more lets see below example:
@@ -48,11 +51,13 @@ Example : a = [3, 4, 7], N = 10
           f(4)       f(2)..       f(0)... for all
 
 
-f (10) = min (1 + f(7)) OR
-f (10) = min (1 + f(6)) OR
-f (10) = min (1 + f(3)) OR
-
-f(n) = min  (1 + f(i)), i <= 0 <= N 
+    f (10) = min (1 + f(7)) OR
+    
+    f (10) = min (1 + f(6)) OR
+    
+    f (10) = min (1 + f(3)) OR
+    
+    f(n) = min(1 + f(i)), i <= 0 <= N 
                 
 ![img.png](img.png)
 
@@ -185,3 +190,56 @@ As per definition:
 The definition states for the matrix[i][j] = Number of ways to make j, if we have the first i elements.
 
 For making the sum j, how many ways you have with conditions you can only use first i element of array coins.
+
+
+### Proving Infeasibility for Large Values -> With Top down without DP
+    Consider N = 10000 and coins = {1, 2, 5}
+    Step-wise Execution of Your Original Recursive Function
+    minCoins(10000)
+    
+    Calls minCoins(9999), minCoins(9998), minCoins(9995)
+    minCoins(9999)
+    
+    Calls minCoins(9998), minCoins(9997), minCoins(9994)
+    minCoins(9998)
+    
+    Calls minCoins(9997), minCoins(9996), minCoins(9993)
+    Total Number of Calls
+    Each call branches into 3 recursive calls (one for each coin).
+    This results in a recursive tree of depth N.
+    The total number of calls follows exponential growth, approximately O(3ⁿ).
+
+### Estimation of Computation
+
+    N	Approximate Number of Calls
+    10	~59049 (3¹⁰)
+    20	~3.49 × 10⁹ (3²⁰)
+    50	~7.18 × 10²³ (3⁵⁰)
+    100	Beyond computational limits
+
+Even for N = 50, this is impossible to compute in a reasonable time. For N = 10000, the function will never finish.
+
+### What is the Practical Limit?
+
+Modern computers can perform 10⁹ operations per second (1 GHz CPU).
+
+    N	Time Taken (Assuming 1 GHz CPU)
+    20	~3 seconds
+    25	~2 minutes
+    30	~7 years
+    35	Impossible in human lifetime
+
+So, N ≈ 25 is the practical limit for your function. Beyond that, execution time becomes infeasible.
+
+### Understanding CPU Performance: "10⁹ Operations per Second (1 GHz CPU)"
+
+Modern processors are measured in GHz (gigahertz), which tells us how many clock cycles they can execute per second.
+
+**What Does "1 GHz = 10⁹ Operations per Second" Mean?**
+
+* A 1 GHz CPU performs 1 billion (10⁹) cycles per second. 
+* However, not all cycles directly translate to method calls. Each operation (addition, multiplication, memory access) takes a few cycles.
+
+### Example: How Many Recursive Calls in One Second?
+
+![img_13.png](img_13.png)

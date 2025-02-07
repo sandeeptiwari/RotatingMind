@@ -1,0 +1,6 @@
+spam    Win a free iPhone now! Click here.
+spam    Limited offer! Claim your discount now.
+ham     Hey, are we still on for lunch today?
+ham     Don’t forget the meeting at 3 PM.
+spam    You have won a lottery! Send your details.
+ham     Can you call me back when you're free?

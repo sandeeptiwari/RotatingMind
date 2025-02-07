@@ -44,6 +44,21 @@ Here we have to take array size n + 1 because we have to store nth index value a
 SC = o(n)
 TC = o(n^2)
 
+Rod Cutting Problem - Time Complexity Analysis & Fixes
+The given implementation has several issues:
+
+Incorrect Base Case:
+The method should check if i is less than or equal to 0, not just i == 0.
+Incorrect Indexing in price Array:
+price[j-1] should be replaced with price[j], as price is typically 1-based indexed.
+Exponential Time Complexity:
+The function recursively calls itself multiple times for the same value of i, leading to an exponential time complexity (O(2ⁿ)).
+Missing Memoization:
+Without memoization, it recomputes subproblems, which is inefficient.
+Loop Should Start from 1 but be Bounded by i Instead of price.length:
+If j > i, i - j becomes negative, which is incorrect.
+
+
 Bottom top:
 
 i depends on i -1 , i-2 .. 0. Here we have to store all previous answer because i is depends on everything previous prices

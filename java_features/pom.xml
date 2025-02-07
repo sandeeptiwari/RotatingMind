@@ -98,6 +98,39 @@
       <version>0.2.3</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.apache.opennlp</groupId>
+      <artifactId>opennlp-tools</artifactId>
+      <version>2.5.3</version>
+    </dependency>
+
+    <!-- DL4J Core -->
+    <dependency>
+      <groupId>org.deeplearning4j</groupId>
+      <artifactId>deeplearning4j-core</artifactId>
+      <version>1.0.0-M2.1</version>
+    </dependency>
+
+    <!-- ND4J Backend (CPU) -->
+    <dependency>
+      <groupId>org.nd4j</groupId>
+      <artifactId>nd4j-native-platform</artifactId>
+      <version>1.0.0-M2.1</version>
+    </dependency>
+
+    <!-- Apache Commons CSV (For Reading CSV Data) -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+      <version>1.10.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.14.0</version>  <!-- Latest stable version -->
+    </dependency>
+
   </dependencies>
 
   <build>

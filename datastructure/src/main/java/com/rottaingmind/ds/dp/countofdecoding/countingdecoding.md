@@ -75,3 +75,22 @@ if (s.length() == 1) return and[0]
 ![img_5.png](img_5.png)
 can optimised space by taking 2 var for storing i-1 and i-2
 o(n) & o(1) if you do above
+
+
+Recursive Calls Breakdown
+At each index i, the function has at most two choices:
+
+Decode a single character (move i + 1).
+Decode two characters together (move i + 2), only if they form a valid number (10-26).
+Without memoization, this would lead to an exponential number of calls, i.e., O(2ⁿ) in the worst case.
+
+Effect of Memoization
+Memoization ensures that each index i is computed only once.
+Since i goes from 0 to n (length of the string), there are at most n distinct states.
+Each recursive call either moves i + 1 or i + 2, but since results are stored in memo, we never recompute the same state.
+Thus, the number of recursive calls reduces to O(n), making the time complexity O(n).
+
+Space Complexity
+Recursive Stack Space: The recursion depth is at most O(n).
+Memoization Storage: We store at most O(n) states in the memo map.
+Total space complexity: O(n) + O(n) = O(n).

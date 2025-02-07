@@ -84,7 +84,7 @@ Disadvantage- It solves all the subproblems.
 
         return arr[n];
 
-Staircase Problem
+### Staircase Problem
 We have been given a staircase of height ‘N’. We can climb 1 or 2 steps at a time. Find the total number of ways to reach the top.
 
 Input: 5
@@ -109,13 +109,14 @@ Auxiliary Space: O(1)
 
 
 
-Memoization - We can use the bottom-up approach of DP to solve this problem as well. We can create an array ways[] and initialize it with -1. Whenever we see that a subproblem is not solved, we can call the recursive method; else, we stop the recursion if the subproblem is solved already.
+### Memoization - 
+We can use the bottom-up approach of DP to solve this problem as well. We can create an array ways[] and initialize it with -1. Whenever we see that a subproblem is not solved, we can call the recursive method; else, we stop the recursion if the subproblem is solved already.
 
 Time complexity: O(N)
 
 Auxiliary Space: O(N)
 
-Tile the Lane
+### Tile the Lane
 We have been given a lane of dimension ‘2x N’. We have to tile the lane with tiles of dimension 2x1. Find the total number of ways to tile the lane.
 
 Input: 5
@@ -146,13 +147,14 @@ Auxiliary Space: O(1)
 
 
 
-Memoization - We can use the bottom-up approach of DP to solve this problem as well. For this, we can create an array ways[] and initialize it with -1. Whenever we see that a subproblem is not solved, we can call the recursive method; else, we stop the recursion if the subproblem is solved already.
+### Memoization - 
+We can use the bottom-up approach of DP to solve this problem as well. For this, we can create an array ways[] and initialize it with -1. Whenever we see that a subproblem is not solved, we can call the recursive method; else, we stop the recursion if the subproblem is solved already.
 
 Time complexity: O(N)
 
 Auxiliary Space: O(N)
 
-Maximum Non Adjacent Sum - 1
+### Maximum Non Adjacent Sum - 1
 We have been given an array of integers. We have to find the maximum sum subsequence such that no two elements in the sequence are adjacent to each other in the array.
 
 Input: [1, 10, 100, 40, 20]
@@ -251,7 +253,8 @@ Time complexity: O(N)
 
 Auxiliary Space: O(N)
 
-Count of Decodings - 1
+### Count of Decodings - 1
+
 A string containing letters from A-Z can be encoded into numbers using the following mapping:
 
 'A' -> "1"

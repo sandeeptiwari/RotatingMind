@@ -1,0 +1,17 @@
+2022-12-10 18:07:14.286 [main] INFO thread.TroubleshootLatencyConcApplication - Generating anagrams
+2022-12-10 18:07:14.309 [main] INFO thread.TroubleshootLatencyConcApplication - Anagrams by method #1: 
+Optional[eatWNasyIhMm]
+2022-12-10 18:07:14.310 [main] INFO thread.TroubleshootLatencyConcApplication - Anagrams by method #2: 
+Optional[aseINtWyMhma]
+2022-12-10 18:07:14.311 [main] INFO thread.TroubleshootLatencyConcApplication - Anagrams by method #3: 
+Optional[NtaemMIhsyWa]
+2022-12-10 18:08:29.507 [main] INFO thread.TroubleshootLatencyConcApplication - Anagrams by method #4: 
+Optional[[NhImatMsaWye, IehtWmyaasNM, WamIyNstMhae, MIetWsmyahNa, haINteMWmysa, myIatMNaeshW, esaytMaWhmNI, tIasaymMNWeh, haaWsyNMetmI, eIMNWhsamtya, ayahsIWMtmNe, MaehINtWsyam, ImshytMWNeaa, ayhNsmeMaWtI, WMyeNamstahI, eImMhaNtsayW, aWayIhsmNeMt, ahsNeWmtayMI, smaythaIWNMe, sWaNItmaMyeh, WMayhsIaNtem, WsmatNheMayI, aWyMNtshIame, eIaamyNWhMts, amWayetINMhs]]
+2022-12-10 18:08:29.516 [main] INFO thread.TroubleshootLatencyConcApplication - Anagrams by method #5: 
+Optional[[syhatMIemWaN, myWatsaMIhNe, aamNWhyeIMst, atIMshayNeWm, aaWhstyNmeMI, ImayNWMetsha, tMmeWsNaIahy, msayIWtaMehN, ahemtIasNMyW, amtsWeMNahIy, WmaMNtysaIhe, NIsayWatMmeh, yeMsNhWtIaam, eymsNWaIMath, etWaNsIMhyma, tIaeshmyWMNa, ytameaMIhWNs, emaNhMyItWsa, WhMetyNmasIa, emMWhIsaytaN, eamaNIsMWyth, thNayeamWsMI, emMtsahWaNyI, amtMINaeWshy, eMhsmyIaatNW]]
+2022-12-10 18:08:29.518 [main] INFO thread.TroubleshootLatencyConcApplication - Anagrams by method #6: 
+Optional[[WaeIhtyNMsam, WeIhMNymaos, sNIMeamy, SMdyahe, gnTao, hAalp, kanYee, sOrca]]
+2022-12-10 18:08:29.525 [main] INFO thread.TroubleshootLatencyConcApplication - Anagrams by method #7: 
+Optional[[aMmWIsheyNat, eMINayoshmW, yaNemIMs, aedSyhM, aongT, pAlah, ekYaen, aOcrs]]
+2022-12-10 18:08:29.526 [main] INFO thread.TroubleshootLatencyConcApplication - Anagrams by method #8: 
+Optional[[hMeWayNastIm, mNysMIhoeaW, eIsNMaym, adyMShe, agTon, aphlA, ekYnae, acsOr]]
