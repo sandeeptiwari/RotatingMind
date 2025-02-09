@@ -1,10 +1,11 @@
 ![img.png](img.png)
 
-2,3,(24): BCX
-2,3,2,4: BCBD
-(23),2,4: WBD
-(23),(24): WX
+    2,3,(24): BCX
+    2,3,2,4: BCBD
+    (23),2,4: WBD
+    (23),(24): WX
 => we have total 4 ways to decode it:
+
 ![img_1.png](img_1.png)
 Here remaining string is our state, whatever remaining is a suffix and suffix is fixed for every state
           cnt(0)

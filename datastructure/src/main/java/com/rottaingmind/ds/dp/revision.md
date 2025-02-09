@@ -1,12 +1,16 @@
-What is DP
-Dynamic programming is a technique for solving a complex problem by breaking into a collection of simpler subproblems, solving each subproblem just once, and then storing their solutions to avoid repetitive computations. It is mainly an optimization over plain recursion. Wherever we see a recursive solution with repeated calls for the same inputs, we can optimize it using Dynamic Programming. This simple optimization reduces time complexities from exponential to polynomial.
+**What is DP? **
 
-For example:
+Dynamic programming is a technique for solving a complex problem by breaking into a collection of simpler subproblems, solving each subproblem just once, and then storing their solutions to avoid repetitive computations. 
+
+It is mainly an optimization over plain recursion. Wherever we see a recursive solution with repeated calls for the same inputs, we can optimize it using Dynamic Programming. This simple optimization reduces time complexities from exponential to polynomial.
+
+**For example:**
 
 Finding Fibonacci numbers-
 
-Recursion:
-int fib(n){
+**Recursion:**
+
+    int fib(n){
 
                 if(n<=1) return n;
 
@@ -18,8 +22,9 @@ int fib(n){
 
     Time Complexity: O(2^N)
 
-Dynamic Programming:
-arr[0]=1;
+**Dynamic Programming:**
+
+    arr[0]=1;
 
         arr[1]=1;
 
@@ -35,17 +40,22 @@ arr[0]=1;
 
      Time Complexity: O(N)
 
-Top Bottom vs Bottom Top
+**Top Bottom vs Bottom Top**
+
 There are two approaches to dynamic programming:
 
-Top-down approach
-Bottom-up approach
+* Top-down approach
+* Bottom-up approach
+* 
 Top-Down approach follows the memoization technique. Here memoization is equal to the sum of recursion and caching. Recursion means calling the function itself while caching means storing the intermediate results.
 
 
 
-Advantage- It solves the subproblems only when it is required.
-Disadvantage- It uses the recursion technique that occupies more memory in the call stack. Sometimes when the recursion is too deep, the stack overflow condition will occur.
+**Advantage-** It solves the subProblems only when it is required.
+
+**Disadvantage-** 
+
+It uses the recursion technique that occupies more memory in the call stack. Sometimes when the recursion is too deep, the stack overflow condition will occur.
 
 
         int fib(n, vector<int>& dp){
@@ -68,8 +78,11 @@ Bottom-up approach uses the tabulation technique to implement the dynamic progra
 
 
 
-Advantage- Recursion is not involved; hence there is no stack overflow issue and no overhead of the recursive functions.
-Disadvantage- It solves all the subproblems.
+**Advantage-** 
+
+Recursion is not involved; hence there is no stack overflow issue and no overhead of the recursive functions.
+
+**Disadvantage-** It solves all the subproblems.
 
 
         arr[0]=1;
@@ -191,7 +204,20 @@ Auxiliary Space: O(N)
 
 
 
-Bottom-Top - We will create an array ans[] of size n. The state for ith index will be same here as well. i.e. ans[i]=max(arr[i]+ans[i-2], ans[i-1]). ans[i] is dependent on ans[i-1] ans ans[i-2] so we’ll have to initialize ans[0] and ans[1]. Clearly, ans[0]=max(0,arr[0]) and ans[1]=max(ans[0], arr[1]).
+**Bottom-Top** - We will create an array ans[] of size n. The state for ith index will be same here as well. i.e. 
+
+    ans[i]=max(arr[i]+ans[i-2], ans[i-1]). ans[i] 
+    
+    
+    is dependent on 
+    
+    ans[i-1] ans ans[i-2] 
+    
+    so we’ll have to initialize ans[0] and ans[1]. Clearly, 
+    
+    ans[0]=max(0,arr[0]) and 
+    
+    ans[1]=max(ans[0], arr[1]).
 
 Time complexity: O(N)
 
@@ -199,7 +225,7 @@ Auxiliary Space: O(N)
 
 Follow up: Can you come up with a solution that takes O(1) space?
 
-Maximum Non Adjacent Sum - 2
+**Maximum Non Adjacent Sum - 2**
 
 
 We have been given a matrix of size 2*n. We have to find the maximum sum subsequence such that no two elements in the sequence are adjacent (horizontally/vertically/diagonally) to each other in the array.
@@ -208,28 +234,25 @@ We have been given a matrix of size 2*n. We have to find the maximum sum subsequ
 
 Input: [[4,70], [100,50], [200,4], [0,2]]
 
-
-
 Output: 270
 
 
 
 
-Approach:
+### Approach:
 
 
 
-This question is a variation of ‘maximum adjacent subarray sum-1’. In this case, instead of ith position, we have ith column of 2 elements. Every column in the array has two choices, either to be in the subsequence or to be left out. If a particular column is selected, again we have 2 choices, we can take the first element or the second element. So the answer would be whatever of the two choices gives the maximum sum.
+This question is a variation of ‘maximum adjacent subarray sum-1’. In this case, instead of ith position, we have ith column of 2 elements. 
+
+Every column in the array has two choices, either to be in the subsequence or to be left out. If a particular column is selected, 
+
+again we have 2 choices, we can take the first element or the second element. So the answer would be whatever of the two choices gives the maximum sum.
 
 Maxsum[0,1,.........,n-1] = max ( max(arr[0][0],arr[0][1]) + Maxsum[2,3,....,n-1] , Maxsum[1,2,....,n-1] )
 
 
-
-
-
-
-
-Brute Force - A simple method that is a direct recursive implementation.
+**Brute Force -** A simple method that is a direct recursive implementation.
 
 Time complexity: O(2^N)
 
@@ -237,7 +260,9 @@ Auxiliary Space: O(1)
 
 
 
-Memoization - We can use the Bottom-Up approach of DP to solve this problem as well. We can create an array ans[] and initialize it with -1. If the subproblem is already solved, i.e., ans[i]!=-1, we’ll stop the recursion by returning ans[i] else, we’ll use the recursive approach i.e.
+**Memoization -** 
+
+We can use the Bottom-Up approach of DP to solve this problem as well. We can create an array ans[] and initialize it with -1. If the subproblem is already solved, i.e., ans[i]!=-1, we’ll stop the recursion by returning ans[i] else, we’ll use the recursive approach i.e.
 
 ans[i]= max(max(arr[i][0],arr[i][1])+ maxsum(i+2,ans,arr), maxsum(i+1,ans,arr).
 
@@ -247,13 +272,15 @@ Auxiliary Space: O(N)
 
 
 
-Bottom-Top - We will create an array ans[] of size n. The state for ith index will be same here as well. i.e. ans[i]=max(max(arr[i][0],arr[i][1])+ans[i-2], ans[i-1]). ans[i] is dependent on ans[i-1] ans ans[i-2] so we’ll have to initialize ans[0] and ans[1]. Clearly, ans[0]=max(0,arr[0]) and ans[1]=max(ans[0], arr[1]).
+**Bottom-Top** - We will create an array ans[] of size n. The state for ith index will be same here as well. i.e. 
+ans[i]=max(max(arr[i][0],arr[i][1])+ans[i-2], ans[i-1]). ans[i] is dependent on ans[i-1] ans ans[i-2] 
+so we’ll have to initialize ans[0] and ans[1]. Clearly, ans[0]=max(0,arr[0]) and ans[1]=max(ans[0], arr[1]).
 
 Time complexity: O(N)
 
 Auxiliary Space: O(N)
 
-### Count of Decodings - 1
+### Count of Decodings - 1 
 
 A string containing letters from A-Z can be encoded into numbers using the following mapping:
 
@@ -271,7 +298,7 @@ Input: “121”
 
 Output: 3
 
-Approach:
+### Approach:
 
 Every time we encounter a new char c, we have two choices:
 
@@ -611,21 +638,28 @@ Time complexity: O(N*W)
 
 Auxiliary Space: O(W)
 
-Longest Increasing Subsequence
+### Longest Increasing Subsequence
+
 We are given an array of integers. We have to find the length of the longest increasing subsequence.
 
-Input: 11, 0, 5, 3, 7, 9, 2
+    Input: 11, 0, 5, 3, 7, 9, 2
+
 
 Output: 4
+
 ![img_6.png](img_6.png)
 
-Brute Force - A simple method that is a direct recursive implementation. We will generate all the subsequences and whichever subsequence is longest and increasing will be the answer.
+**Brute Force -** 
+
+A simple method that is a direct recursive implementation. We will generate all the subsequences and whichever subsequence is longest and increasing will be the answer.
 
 Time complexity: O(2^N)
 
 Auxiliary Space: O(1)
 
-Bottom-top - Suppose we have to find LIS ending up to index i, and we know LIS at every index which is smaller than i. We can iterate from 0 to i-1 and let's assume index varies in j. So if arr[j] is smaller than arr[i], we can say LIS up to i is equal to 1 + LIS up to j. We will take the max of all possible values of j and that will be LIS at index i.
+**Bottom-top :**
+
+Suppose we have to find LIS ending up to index i, and we know LIS at every index which is smaller than i. We can iterate from 0 to i-1 and let's assume index varies in j. So if arr[j] is smaller than arr[i], we can say LIS up to i is equal to 1 + LIS up to j. We will take the max of all possible values of j and that will be LIS at index i.
 
 We will take an array lis of size n, and initialize it with 1. Because at every index, the minimum length of an increasing subsequence is 1, i.e. that element itself.
 

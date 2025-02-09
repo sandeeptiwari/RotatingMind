@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,7 +88,7 @@ public class HousePricePredictor {
 
             // Train Model
             DataSet trainingData = new DataSet(inputFeatures, outputLabels);
-            model.fit(trainingData, 1000);
+            //model.fit(trainingData, 1000);
 
             // Test Model
             INDArray testInput = Nd4j.create(new double[][]{{2000, 3, 2}});

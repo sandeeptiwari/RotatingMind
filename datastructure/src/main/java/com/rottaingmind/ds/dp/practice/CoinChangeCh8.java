@@ -89,6 +89,43 @@ public class CoinChangeCh8 {
         return dp[N] == Integer.MAX_VALUE - 1 ? -1 : dp[N]; // Handle no solution case
     }
 
+    //coin change - 2 -> https://leetcode.com/problems/coin-change-ii/
+
+    public int changeOld(int amount, int[] coins) {
+        int len = coins.length;
+        int dp[][] = new int[len + 1][amount + 1];
+
+        for (int i = 0; i <= len; i++) {
+            dp[i][0] = 1;
+        }
+
+        for (int i = 1; i <= len; i++) {
+            for (int j = 1; j <= amount; j++) {
+                int x = (j >= coins[i-1]) ? dp[i][j - coins[i -1]] : 0;
+                dp[i][j] = dp[i-1][j] +  x;
+            }
+        }
+
+        return dp[len][amount];
+    }
+
+
+    public int changeNew(int amount, int[] coins) {
+        int[] dp = new int[amount + 1];
+        dp[0] = 1;  // Only 1 way to make 0 (by choosing nothing)
+
+        for (int coin : coins) {
+            for (int j = coin; j <= amount; j++) {
+                dp[j] += dp[j - coin];  // Add ways using current coin
+            }
+        }
+
+        return dp[amount];
+    }
+
+    //--------------------------------------------------------------
+
+
     public static void main(String[] args) {
         CoinChangeCh8 cc = new CoinChangeCh8();
         int[] coins = {1, 2, 5};

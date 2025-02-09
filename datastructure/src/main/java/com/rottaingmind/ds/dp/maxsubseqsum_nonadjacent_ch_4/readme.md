@@ -90,7 +90,7 @@ o/p = 200 + 70 = 270
 
 Here is above table, we noticed 1 thing {c,D} is common in both it means from column 1 either we select 1st or 2nd ele we cant pick anything from
 
-next column any element so now we have 2 chices either we take max value from column 1 or just leave column 1 and move to column 2
+next column any element so now we have 2 choices either we take max value from column 1 or just leave column 1 and move to column 2
 
         f(i) = 1. max( arr[0][i], arr[1][i]) + f(i + 2))    -> i is column number & f(i + 2) - it'll sum from i+2 to end 
                2. f(i+1)

@@ -1,5 +1,15 @@
+
 ![img.png](img.png)
 ![img_1.png](img_1.png)
+
+
+
+![img_7.png](img_7.png)
+
+Each level d there are 2 ^ d choices, there are N items so complexity is 2 ^N.
+
+Another way to consider each item as bit then we check for all possible combinations of setting and unsetting, and find maximum value obtained while satisifying weight constraint. It is clear we need to check (1 << n) or 2 ^ N iterations. So, naive solution is 2 ^ N.
+
 
 we have 2 state here of function index and remaining weight;
 
@@ -77,7 +87,25 @@ then dimention would be;
 
 ![img_6.png](img_6.png)
 
+
+    knapSack(5, {6, 10, 12}, {1, 2, 3})
+    ├── Include item 3: 12 + knapSack(2, {6, 10, 12}, {1, 2, 3})
+    │   ├── Include item 2: 10 + knapSack(0, {6, 10, 12}, {1, 2, 3}) = 10
+    │   ├── Exclude item 2: knapSack(2, {6, 10, 12}, {1, 2, 3}) = 6
+    │   ├── Max(10, 6) = 10
+    │   ├── 12 + 10 = 22
+    │
+    ├── Exclude item 3: knapSack(5, {6, 10, 12}, {1, 2, 3})
+    │   ├── Include item 2: 10 + knapSack(3, {6, 10, 12}, {1, 2, 3}) = 16
+    │   ├── Exclude item 2: knapSack(5, {6, 10, 12}, {1, 2, 3}) = 16
+    │   ├── Max(16, 16) = 16
+    │
+    ├── Max(22, 16) = 22
+    
+
+
 Assignments:
+
 https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1
 https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1
 https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1
