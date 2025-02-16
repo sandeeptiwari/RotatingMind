@@ -7,12 +7,12 @@
 Case 1. When starting and ending chars match:
 ![img_1.png](img_1.png)
 
-
-f(i, j) = LPS in S[i...j]
-        = if(s[i] == s[j]) {
-        2 + f(i + 1, j-1)
-} else  //Case 2. When starting and ending chars doesn't match:
-  return max ( f(i + 1, j), f(i, j-1))
+    
+    f(i, j) = LPS in S[i...j]
+            = if(s[i] == s[j]) {
+            2 + f(i + 1, j-1)
+    } else  //Case 2. When starting and ending chars doesn't match:
+      return max ( f(i + 1, j), f(i, j-1))
 
 **Note:** 
 To denote the entire string to make a call for f(0, n-1), because when we call f(i, j), we call the part s[i] + s[j]
@@ -20,15 +20,42 @@ To denote the entire string to make a call for f(0, n-1), because when we call f
 ![img_2.png](img_2.png)
 if (i == j) return 1
 
+   
+
 ![img_3.png](img_3.png)
 
 resolve overlapping problem:
 ![img_4.png](img_4.png)
 
-TC: o(n^2)
+
+    longestPalindromeSubseq(0,4,"bbbab")
+    ├── 2 + longestPalindromeSubseq(1,3,"bba")
+    │      ├── max(longestPalindromeSubseq(2,3,"ba"), longestPalindromeSubseq(1,2,"bb"))
+    │      │     ├── max(1, 1) = 1   (Base Case for "ba" and "bb")
+    │      │
+    │      ├── Result: 1 + 2 = 3
+    │
+    ├── Final Result: 3 + 2 = **4**
+
+
+
+TC: o(2^n)
 SC: O(n^2)
 
-Bottom Top:
+**Bottom Top:**
+
+**Why Do We Fill the DP Matrix Diagonally?**
+
+    When solving the Longest Palindromic Subsequence (LPS) problem using a bottom-up DP approach, we fill the DP table diagonally because:
+
+    Smaller Subproblems Help Solve Larger Subproblems
+    
+    dp[i][j] depends on dp[i+1][j-1], dp[i+1][j], and dp[i][j-1].
+    Before computing dp[i][j], we must have already computed dp[i+1][j-1] and other necessary subproblems.
+    Ensures Correct Order of Computation
+    
+    The shortest substrings (length 1) are filled first (diagonal dp[i][i] = 1).
+    We then move to substrings of length 2, 3, ... up to n, ensuring that when computing dp[i][j], all necessary previous results are already available.
 
 ![img_5.png](img_5.png)
 

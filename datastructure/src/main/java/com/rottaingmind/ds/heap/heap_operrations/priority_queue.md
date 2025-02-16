@@ -12,10 +12,10 @@ for getting largest k element from arr, in that case we can use priority queue f
 and print thats it.
 ![img_5.png](img_5.png)
 
-SC = o(n)
-TC: part 1-> pushing ele in priority Queue
-    o(i) = log 1 + log 2 + log 3------ log N
-         = log ( 1 * 2 * 3 * 4 ....N) = log (n!) = n log n
+    SC = o(n)
+    TC: part 1-> pushing ele in priority Queue
+        o(i) = log 1 + log 2 + log 3------ log N
+             = log ( 1 * 2 * 3 * 4 ....N) = log (n!) = n log n
 part 2:
   k times performing nlogn time because running while loop k time and q .pop take log n time complexity
  = k log(n)

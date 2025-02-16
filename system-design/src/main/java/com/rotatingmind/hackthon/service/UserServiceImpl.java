@@ -4,6 +4,8 @@ import com.rotatingmind.hackthon.domain.HackthonUser;
 import com.rotatingmind.hackthon.repo.Repository;
 import com.rotatingmind.hackthon.repo.UserRepository;
 
+import java.util.List;
+
 public class UserServiceImpl implements UserService {
 
     private final Repository<HackthonUser, Long> userRepository;

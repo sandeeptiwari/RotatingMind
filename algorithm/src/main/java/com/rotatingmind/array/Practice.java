@@ -1,6 +1,7 @@
 package com.rotatingmind.array;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class Practice {
 
@@ -202,9 +203,57 @@ public class Practice {
      * 1- 1 2 3 4 5 6
      * 2- 6 7 8
      * 3- 10 11
-     * @param args
      */
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         System.out.println("Result " + countConsecutiveV1(15));
+    }*/
+
+
+    public static boolean isPalindrome(int x) {
+        int sum  = 0;
+        int rem = 0;
+        while(x > 0) {
+            rem = x % 10;
+            sum =  sum * 10 + rem;
+            x = x / 10;
+        }
+
+        return x == sum;
     }
+
+    public static void main(String[] args) {
+        System.out.println("Result " + isPalindrome(121));
+    }
+
+    public List<String> fizzBuzz(int n) {
+        return IntStream.range(1, n + 1)
+                .mapToObj(index -> {
+                    String ele = "" + index;
+                    if (index % 3  == 0 && index % 5 == 0) {
+                        ele = "FizzBuzz";
+                    } else if (index % 5 == 0) {
+                        ele = "Buzz";
+                    } else if (index % 3 == 0) {
+                        ele = "Fizz";
+                    }
+                    return ele;
+                }).toList();
+    }
+
+    public List<String> test(int n) {
+            return new AbstractList<String>() {
+                @Override
+                public int size() {
+                    return n;
+                }
+
+                @Override
+                public String get(int i) {
+                    return ++i % 3 == 0 ? i % 5 == 0 ? "FizzBuzz" : "Fizz" : i % 5 == 0 ? "Buzz" : Integer.toString(i);
+                }
+            };
+    }
+
+
+
 }

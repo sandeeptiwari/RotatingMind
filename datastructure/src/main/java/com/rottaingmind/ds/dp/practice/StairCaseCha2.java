@@ -24,25 +24,8 @@ public class StairCaseCha2 {
      * Understanding the problem:
      * You can take 1 step or 2 steps at a time. The number of ways to reach step n is:
      *
-     * 𝑓
-     * (
-     * 𝑛
-     * )
-     * =
-     * 𝑓
-     * (
-     * 𝑛
-     * −
-     * 1
-     * )
-     * +
-     * 𝑓
-     * (
-     * 𝑛
-     * −
-     * 2
-     * )
      * f(n)=f(n−1)+f(n−2)
+     *
      * Now, let's analyze what happens when n == 0.
      *
      * Think of n as "remaining steps"

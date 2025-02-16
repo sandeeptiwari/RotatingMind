@@ -1,21 +1,22 @@
-![img.png](img.png)
+                   ![img.png](img.png)
 
 1. 1 X 2 vertical
 2. 2 X 1 horizontal
 ![img_1.png](img_1.png)
 ![img_2.png](img_2.png)
 
-numTilings(4)
-├── numTilings(3)
-│   ├── numTilings(2)
-│   │   ├── numTilings(1)
-│   │   │   ├── numTilings(0) → 1
-│   │   │   ├── numTilings(-1) → 0
-│   │   ├── numTilings(0) → 1
-│   ├── numTilings(1) → 1
-│   ├── numTilings(0) → 1
-├── numTilings(2) → 2
-├── numTilings(1) → 1
+
+    numTilings(4)
+    ├── numTilings(3)
+    │   ├── numTilings(2)
+    │   │   ├── numTilings(1)
+    │   │   │   ├── numTilings(0) → 1
+    │   │   │   ├── numTilings(-1) → 0
+    │   │   ├── numTilings(0) → 1
+    │   ├── numTilings(1) → 1
+    │   ├── numTilings(0) → 1
+    ├── numTilings(2) → 2
+    ├── numTilings(1) → 1
 
 ![img_3.png](img_3.png)
 ![img_4.png](img_4.png)

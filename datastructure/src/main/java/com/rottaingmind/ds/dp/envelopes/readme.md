@@ -1,5 +1,9 @@
 ![img.png](img.png)
 
+
+![img_8.png](img_8.png)
+
+
 Example:
 
 envelop width  : 10   2   9   5
@@ -17,7 +21,7 @@ LIP (Longest Increasing pair) = LIP[i]
 
 But here problem is reordering is allowed so might be give different output after reordering
 
-to solve this can we reorder in such a way that all envelop comes left which fir in ith envelop
+to solve this can we reorder in such a way that all envelop comes left which fit in ith envelop
 
 ..left.... Ei.......
 
@@ -51,6 +55,7 @@ Alternate elegant solution:
 
 
 Assignments:
+
 https://leetcode.com/problems/number-of-longest-increasing-subsequence/
 https://dashboard.programmingpathshala.com/renaissance/topics/assignment?module=5&topic=22&assignment=83
 https://www.geeksforgeeks.org/problems/box-stacking/1

@@ -4,8 +4,10 @@ public class ImplementStringContains extends Object {
 
     public static void main(String[] args) {
         ImplementStringContains obj = new ImplementStringContains();
-        System.out.println("Find At " + obj.indexOf("NamanT Tiwari", "Tiwari"));
-        System.out.println("NamanT Tiwari".contains("Tiwari"));
+        //System.out.println("Find At " + obj.indexOf("NamanT Tiwari", "Tiwari"));
+        //System.out.println("NamanT Tiwari".contains("Tiwari"));
+        System.out.println("Sandeep".indexOf("and"));
+        System.out.println(indexOfStr("Sandeep","and"));
     }
 
 
@@ -40,7 +42,7 @@ public class ImplementStringContains extends Object {
         return -1;
     }
 
-    public int indexOf(String src, String trg) {
+    public static int indexOfStr(String src, String trg) {
         if (src.length() == trg.length()) {
             return 0;
         }
