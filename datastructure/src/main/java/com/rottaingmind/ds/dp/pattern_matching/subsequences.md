@@ -18,17 +18,17 @@ Last chars matched:
 
 final recurance relation:
 
-f(i, j) = f(i-1, j) //last chars doesnt match
-        = f(i-1, j-1) + f(i-1, j) // last chars match and let fix i and not fix i
-
-    f(i, j) = f(i-1, j-1) + f(i-1, j)
-
-j == - 1 -> p = "" // empty prefix of P
-if(j == - 1 && i == -1) return 1
-f("xy", "") = return 1 // every string has 1 empty subsequence
-
-if (j != - 1 && i == -1) f("", "abc")// not possible subsequence of empty is not empty so in this case we have to return 0
-  return 0
+    f(i, j) = f(i-1, j) //last chars doesnt match
+            = f(i-1, j-1) + f(i-1, j) // last chars match and let fix j and not fix i
+    
+        f(i, j) = f(i-1, j-1) + f(i-1, j)
+    
+    j == - 1 -> p = "" // empty prefix of P
+    if(j == - 1 && i == -1) return 1
+    f("xy", "") = return 1 // every string has 1 empty subsequence
+    
+    if (j != - 1 && i == -1) f("", "abc")// not possible subsequence of empty is not empty so in this case we have to return 0
+      return 0
 
 ### Implementation:
 ![img_9.png](img_9.png)
@@ -46,6 +46,7 @@ SC: O(m*n)
 
 
 Assignments:
+
 https://leetcode.com/problems/distinct-subsequences/description/
 https://leetcode.com/problems/regular-expression-matching/description/
 https://leetcode.com/problems/wildcard-matching/description/

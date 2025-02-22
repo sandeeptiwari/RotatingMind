@@ -82,13 +82,13 @@ Here in this case we cant say that if border char match then middle remaining su
 
 Let's thing come up with totally different definition: 
 
-isPal(i, j): whether my substring starts at i and ends at j is palindrom or not?
+isPal(i, j): where my substring starts at i and ends at j is palindrom or not?
 
     isPal(i, j) ? T : F
 
 based on this definition
 
-so if we chack inner substring starts at p and ends at p is pali(i, j) or not first criteria would be border element should match
+so if we check inner substring starts at p and ends at p is pali(i, j) or not first criteria would be border element should match
 
      isPal(i, j) = S[i] == S[j]  && ispal(i +1, j-1)
 

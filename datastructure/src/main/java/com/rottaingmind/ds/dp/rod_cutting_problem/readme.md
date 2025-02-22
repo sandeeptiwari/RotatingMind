@@ -11,31 +11,33 @@ he f(7) depends on f(1), f(2) ..f(n)  means larger problem depends on smaller 1 
 
 choices:
 
-f(7) = 2 + f(6)
-f(7) = 5 + f(5)
-f(7) = 9 + f(4)
+    f(7) = 2 + f(6)
+    f(7) = 5 + f(5)
+    f(7) = 9 + f(4)
 
 as below:
 ![img_1.png](img_1.png)
 
 means f(7) = max of any one of choices because above are different choices for cutting the rod:
 our terminal case when rod dont have nay length (=0)
-
-f(i) = max(price[1]  + f(i-1))
-f(i) = max(price[2]  + f(i-2))
-f(i) = max(price[3]  + f(i-3))
-f(i) = max(price[4]  + f(i-5))
-f(i) = max(price[5]  + f(i-5))
-f(i) = max(price[6]  + f(i-6))
-...
-f(i) = max(price[i] + f(0))
+    
+    f(i) = max(price[1]  + f(i-1),
+    f(i) = price[2]  + f(i-2),
+    f(i) = price[3]  + f(i-3),
+    f(i) = price[4]  + f(i-5),
+    f(i) = price[5]  + f(i-5),
+    f(i) = price[6]  + f(i-6))
+    ...
+    f(i) = max(price[i] + f(0))
 
 1 <= j <= i
 f(i) = max(price[j-1]  + f(i-j)) // index of price start from 0
-imlementation is as:
+
+**imlementation is as:**
+
 ![img_2.png](img_2.png)
 
-since there is overriding function so we can use memorization, befor ethat we need to think state of function, state of function can  identified bby remaining length
+since there is overriding function so we can use memoization, before that we need to think state of function, state of function can  identified by remaining length
 which is never be greater that n. Then problem can we identified by any value between 0 to n
 
 Here we have to take array size n + 1 because we have to store nth index value as well

@@ -1,6 +1,7 @@
 package com.rottaingmind.ds.dp.practice;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public class StairCaseCha2 {
 
@@ -52,11 +53,75 @@ public class StairCaseCha2 {
         return dp[n];
     }
 
+
+    public static int minCostClimbingStairs(int[] cost) {
+        int n = cost.length;
+        int[] dp = new int[n + 1];
+        Arrays.fill(dp, -1);  // Fill with -1 to indicate uncomputed states
+        return Math.min(minCostClimbingStairs(n - 1, cost, dp), minCostClimbingStairs(n - 2, cost, dp));
+    }
+
+    public static int minCostClimbingStairs(int i, int[] cost, int[] dp) {
+        if (i == 0) return cost[0];
+        if (i == 1) return cost[1];
+
+        if (dp[i] != -1) return dp[i];  // Return already computed value
+
+        int oneStep = minCostClimbingStairs(i - 1, cost, dp);
+        int twoStep = minCostClimbingStairs(i - 2, cost, dp);
+
+        dp[i] =  cost[i] + Math.min(oneStep, twoStep);
+
+        return dp[i];
+    }
+
+    public int minCostClimbingStairs1(int[] cost) {
+        int n = cost.length;
+        int[] dp = new int[n + 1];
+        dp[0] = cost[0];
+        dp[1] = cost[1];
+
+        for (int i = 2; i <= n; i++) {
+            dp[i] = Math.min(dp[i - 1], dp[i - 2]) + cost[i];
+        }
+
+        return Math.min(dp[n -1], dp[n-2]);
+    }
+
+    public int minCostClimbingStairs2(int[] cost) {
+        int n = cost.length;
+        int prev2 = cost[0];
+        int prev1 = cost[1];
+
+        for (int i = 2; i <= n; i++) {
+            int curr = cost[i] + Math.min(prev1, prev2);
+            prev2 = prev1;
+            prev1 = curr;
+        }
+
+        return Math.min(prev1, prev2);
+    }
+
     public static void main(String[] args) {
         int n = 5; // Example input
         int[] dp = new int[n + 1];
         Arrays.fill(dp, -1); // Initialize dp array with -1
 
-        System.out.println("Total ways to reach " + n + ": " + totalWaysV1(n, dp));
+        int[] a = {10,15,20};
+
+       // System.out.println("Total ways to reach " + n + ": " + totalWaysV1(n, dp));
+        System.out.println("Total ways to reach " + n + ": " + minCostClimbingStairs(a));
+
+        int[] b = {1,100,1,1,1,100,1,1,100,1};
+        System.out.println("Total ways to reach " + n + ": " + minCostClimbingStairs(b));
+
+
+        //int[] cost = {10, 15, 20};
+        //int n = cost.length;
+
+        // Min cost to reach the top can be from n-1 or n-2 (top step can be reached in two ways)
+       // int result = Math.min(minCostClimbingStairs(n - 1, cost), minCostClimbingStairs(n - 2, cost));
+
+      //  System.out.println(result); // Output: 15*/
     }
 }

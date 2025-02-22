@@ -221,8 +221,56 @@ public class Practice {
         return x == sum;
     }
 
+
+
+    public static boolean isSorted(int[] nums) {
+            int n = nums.length;
+            int[] arr = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                arr[i] = nums[i];
+            }
+
+            Arrays.sort(arr);
+            int x =0;
+            int count = 0;
+            while (x < n) {
+                if (x != 0) {
+                    rotateByOne(arr);
+                }
+                count = 0;
+
+                for (int j = 0; j < n; j++) {
+                    if (nums[j] == arr[j]) {
+                        count++;
+                    }
+                }
+
+                if (count == n) {
+                    return true;
+                }
+
+                x++;
+            }
+            return false;
+    }
+
+    public static void rotateByOne(int[] arr) {
+        int n = arr.length;
+        int temp = arr[n-1];
+
+        for(int i = n-2; i >= 0; i--) {
+            arr[i + 1] = arr[i];
+        }
+        arr[0] = temp;
+    }
+
     public static void main(String[] args) {
-        System.out.println("Result " + isPalindrome(121));
+        int[] a = {3,4,5,1,2};
+        int[] a1 = {1,2,3};
+        int[] a2 = {2,1,3,4};
+        int[] a3 = {2,1};
+        System.out.println("Result " + isSorted(a));
     }
 
     public List<String> fizzBuzz(int n) {

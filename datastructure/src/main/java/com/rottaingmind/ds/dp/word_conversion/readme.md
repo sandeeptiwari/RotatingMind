@@ -19,8 +19,8 @@ in this case we just recurse remaining part: f(i-1, j-1)
 
 Case 2: if last chars doesn't match?
 
-w1: ............... a(i)
-w2: ...........b(j)
+    w1: ............... a(i)
+    w2: ...........b(j)
 
 1. applied replace operation:
 
@@ -45,7 +45,7 @@ getEditD(i, j) = x ( Edit distance between w1 to w2)
 Here i represents: w1[0...i] && j represents w2[0...j]
 
 1. Matched:
-   `getEditD(i, j) = get(i-1, j-1)`
+   `getEditD(i, j) = get(i-1, j-1)`                 
 2. not matched
    `getEditD(i, j) = 1 + min( f(i-1, j-1), f(i, j-1), f(i-1, j))`
 
@@ -83,6 +83,7 @@ optimize space:
 return ans = tmp
 
 https://leetcode.com/problems/edit-distance/
+
 https://leetcode.com/problems/edit-distance/description/
 
 

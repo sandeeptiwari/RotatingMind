@@ -126,11 +126,51 @@ public class CoinChangeCh8 {
     //--------------------------------------------------------------
 
 
+    public int coinChange(int[] coins, int amount) {
+        int[] dp = new int[amount + 1];
+        Arrays.fill(dp, -1);
+
+        int ans = coinCount(coins, amount, dp);
+
+        return (ans == Integer.MAX_VALUE) ?  -1 : ans;
+    }
+
+    int coinCount(int[] coins, int amount, int[] dp) {
+
+        if(amount == 0) {
+            return 0;
+        }
+        if(amount < 0) {
+            return Integer.MAX_VALUE;
+        }
+
+        if (dp[amount] != -1) {
+            return dp[amount];
+        }
+
+        int minCoins = Integer.MAX_VALUE;
+
+        for(int i = 0; i < coins.length; i++) {
+            int ans = coinCount(coins, amount - coins[i], dp);
+
+            if(ans != Integer.MAX_VALUE) {
+                //we have returned 0 in ans, so now we are updating the ans count
+                //hence 1 + ans
+                minCoins = Math.min(minCoins, 1 + ans);
+            }
+        }
+        dp[amount] = minCoins;
+
+        return dp[amount];
+    }
+
     public static void main(String[] args) {
         CoinChangeCh8 cc = new CoinChangeCh8();
-        int[] coins = {1, 2, 5};
-        int N = 11;
-        System.out.println(cc.minCoins(coins, N)); // Output: 3 (5+5+1)
+        //int[] coins = {1, 2, 5};
+        int[] coins = {2};
+        int N = 3;
+        int ans = Integer.MAX_VALUE -1;
+        System.out.println(cc.coinChange(coins, N)); // Output: 3 (5+5+1)
     }
 
 }
