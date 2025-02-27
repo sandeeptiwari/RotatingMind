@@ -39,3 +39,7 @@ Of course, there is; it is to union by rank. The word “rank” means ordering 
 To be specific, the “rank” refers to the height of each vertex. When we union two vertices, instead of always picking the root of x (or y, it doesn't matter as long as we're consistent) as the new root node, we choose the root node of the vertex with a larger “rank”. We will merge the shorter tree under the taller tree and assign the root node of the taller tree as the root node for both vertices. In this way, we effectively avoid the possibility of connecting all vertices into a straight line. This optimization is called the “disjoint set” with union by rank
 
 ![img_9.png](img_9.png)
+
+**Number of Province:**
+
+![img_10.png](img_10.png)

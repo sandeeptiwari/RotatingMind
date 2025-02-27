@@ -24,8 +24,8 @@ might be new LIS present
          10  30   3   4   6
     LIS[] = {2, 30}
           = {2, 30}  because 3 < 30
-          = for index  2 {2, 30} because 4 < 30
-          = for index 3  {2, 30} because 6 < 30
+          = for index  3 {2, 30} because 4 < 30
+          = for index 4  {2, 30} because 6 < 30
 
 
     so final LIST length is 2 which is {10, 30} which is not correct we have other greater LIS available in this array

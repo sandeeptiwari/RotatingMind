@@ -60,6 +60,9 @@ public class SubArrayWithGivenSum {
             } else {
                 System.out.println("No");
             }
+
+
+            boolean isThere = "Sandeep".contains(String.valueOf('a'));
         }
 
 
