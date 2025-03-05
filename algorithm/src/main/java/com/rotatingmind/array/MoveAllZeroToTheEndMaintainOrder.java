@@ -54,6 +54,10 @@ public class  MoveAllZeroToTheEndMaintainOrder {
 
         for (int i = 0; i < a.length; i++) {
 
+
+
+
+
             if (a[i] != 0) {
                 swap(a, j, i);
                 j++;

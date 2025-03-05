@@ -1,5 +1,6 @@
-Pair Sum-1
-We have been given a sorted integer array Arr[N] and an integer ‘SUM’. If there exists a pair (i, j) such that Arr[i]+Arr[j]=SUM then return true otherwise false.
+**Pair Sum-1**
+
+We have been given a sorted integer array Arr[N] and an integer ‘SUM’. If there exists a pair (i, j) such that **Arr[i]+Arr[j]=SUM** then return true otherwise false.
 
 Input: Arr[5] = {2, -1, 0,  3, 9}, SUM = 8
 
@@ -8,30 +9,38 @@ Output: True
 Approach:
 
 Brute Force - We can calculate the sum of all the possible pairs and return true if such a pair exists.
-Time complexity: O(N^2)
-Space complexity: O(1)
+
+    Time complexity: O(N^2)
+    Space complexity: O(1)
 
 Binary Search - We can fix the first element – Arr[i] by iterating on the array and then apply binary search on the remaining array to find the second element - Arr[j] i.e. SUM-Arr[i].
-Time complexity: O(NlogN)
-Space complexity: O(1)
 
-Two Pointers - We can initialize two variables - l & r, pointing to the first and the last element of the array. We can find their sum and move the pointers towards each other based on the value of Arr[i]+Arr[j] and SUM.
-If Arr[i]+Arr[j] > SUM, r--
-If Arr[i]+Arr[j] < SUM, l++
-If Arr[i]+Arr[j] = SUM, return true
+**Time complexity: O(NlogN)
+Space complexity: O(1)**
 
-Time complexity: O(N)
-Space complexity: O(1)
+**Two Pointers -** 
+
+We can initialize two variables - l & r, pointing to the first and the last element of the array. We can find their sum and move the pointers towards each other based on the value of Arr[i]+Arr[j] and SUM.
+
+    If Arr[i]+Arr[j] > SUM, r--
+    If Arr[i]+Arr[j] < SUM, l++
+    If Arr[i]+Arr[j] = SUM, return true
+
+    Time complexity: O(N)
+    Space complexity: O(1)
+
 Three key things that we should consider while using the Two pointer technique:
 
 How many pointers do we need?
 How do we initialize them?
 How do we move them?
-Pair Sum-2
+
+**Pair Sum-2**
+
 We have been given a sorted integer array Arr[N] and we have to find the count of the total number of pairs (i, j) such that Arr[i]+Arr[j]=SUM where i≠j.
 
-Input: Arr[9] = {1, 41, 42, 51, 52, 53, 61, 62, 11}, SUM = 10
-Output: 7  {(41, 61), (41, 62), (42, 61), (42, 62), (51, 52), (52, 53), (51, 53)}
+    Input: Arr[9] = {1, 41, 42, 51, 52, 53, 61, 62, 11}, SUM = 10
+    Output: 7  {(41, 61), (41, 62), (42, 61), (42, 62), (51, 52), (52, 53), (51, 53)}
 
 Approach:
 
@@ -43,7 +52,7 @@ Binary Search - We can iterate on the array to fix the first element - Arr[i] an
 Time complexity: O(NlogN)
 Space complexity: O(1)
 
-Two Pointers - We can use the two pointer approach to initialise two variables - l & r,  pointing to the first and the last element of the array. We can increment the count if Arr[l] + Arr[r] = SUM.
+**Two Pointers** - We can use the two pointer approach to initialise two variables - l & r,  pointing to the first and the last element of the array. We can increment the count if Arr[l] + Arr[r] = SUM.
 
 For repeated elements, we can count their frequency and use the Product Rule to find the number of pairs.
 
@@ -51,7 +60,9 @@ For cases where Arr[i]=Arr[j]=SUM/2, we can find the count(k) of the element and
 
 Time complexity: O(NlogN)
 Space complexity: O(1)
-Pair Difference
+
+**Pair Difference**
+
 We have been given a sorted integer array Arr[N] and an integer ‘diff’. If there exists a pair (i, j) such that i≠j and Arr[i]-Arr[j]=diff then return true otherwise return false.
 
 Input: Arr[5] = {11, 2, 7, 4, 15}, diff=2
