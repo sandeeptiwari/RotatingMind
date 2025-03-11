@@ -9,7 +9,7 @@ import java.util.BitSet;
  * sort it
  * a[] = {1, 3, 6, 9} => not max diff between
  *
- * we can iterate and check each gam and consider max gap
+ * we can iterate and check each gap and consider max gap
  *
  * but lets say min = 1 and max is 7 lets  say what would be 3rd element between 1st and max ele
  * if will choose ele 2

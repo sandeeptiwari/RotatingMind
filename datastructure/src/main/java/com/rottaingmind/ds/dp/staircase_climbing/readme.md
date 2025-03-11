@@ -79,4 +79,27 @@ dp[i] stores the minimum cost to reach step i, but we don't need to store a sepa
 
 
 
+https://leetcode.com/problems/min-cost-climbing-stairs/description/
+
+    minCost(3)
+    |
+    cost[3] + min(minCost(2), minCost(1))
+    |
+    20 + min(minCost(2), minCost(1))
+           /                \
+          /                  \
+    minCost(2)               minCost(1)
+    |                       |
+    cost[2] + min(minCost(1), minCost(0))   15
+    |
+    15 + min(minCost(1), minCost(0))
+           /       \
+           /        \
+    minCost(1)   minCost(0)
+    |           |
+    15          10
+
+
+
+
 

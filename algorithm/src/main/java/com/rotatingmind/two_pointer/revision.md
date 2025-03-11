@@ -39,8 +39,8 @@ How do we move them?
 
 We have been given a sorted integer array Arr[N] and we have to find the count of the total number of pairs (i, j) such that Arr[i]+Arr[j]=SUM where i≠j.
 
-    Input: Arr[9] = {1, 41, 42, 51, 52, 53, 61, 62, 11}, SUM = 10
-    Output: 7  {(41, 61), (41, 62), (42, 61), (42, 62), (51, 52), (52, 53), (51, 53)}
+    Input: Arr[9] = {1, 4, 4, 5, 5, 5, 6, 6, 1}, SUM = 10
+    Output: 7  {(4, 6), (4, 6), (4, 6), (4, 6), (5, 5), (5, 5), (5, 5)}
 
 Approach:
 

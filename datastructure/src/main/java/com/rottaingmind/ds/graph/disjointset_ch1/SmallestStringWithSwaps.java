@@ -170,7 +170,7 @@ public class SmallestStringWithSwaps {
         testCases.add(List.of(1, 4));
         testCases.add(List.of(0, 3));
         testCases.add(List.of(2, 4));
-        System.out.println(obj.smallestStringWithSwaps("edcba", testCases)); // Expected output: "abcde"
+        System.out.println(obj.smallestStringWithSwaps(                         "edcba", testCases)); // Expected output: "abcde"
 
         // Test Case 5
         testCases.clear();
