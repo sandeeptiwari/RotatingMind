@@ -1,6 +1,8 @@
 package com.rottaingmind.ds.graph.disjointset_ch1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -130,44 +132,54 @@ import java.util.List;
  * Total Cost = 3
  * Houses 1, 2, and 3 are all connected to the water supply with minimum cost.
  */
-public class OptimizeWaterDistributionInAVillage {
 
-    class UnionFind {
-        int[] parent;
-        int[] rank;
+class FindUnionV3 {
+    private final int[] root;
+    private final int[] rank;
 
-        UnionFind(int n) {
-            parent = new int[n];
-            rank = new int[n];
-            for (int i = 0; i < n; i++) {
-                parent[i] = i;
-            }
-        }
+    FindUnionV3(int size) {
+        this.root = new int[size];
+        this.rank = new int[size];
 
-        int find(int x) {
-            if (parent[x] != x) {
-                parent[x] = find(parent[x]); // Path compression
-            }
-            return parent[x];
-        }
-
-        void union(int a, int b) {
-            int rootA = find(a);
-            int rootB = find(b);
-            if (rootA != rootB) {
-                if (rank[rootA] > rank[rootB]) {
-                    parent[rootB] = rootA;
-                } else if (rank[rootA] < rank[rootB]) {
-                    parent[rootA] = rootB;
-                } else {
-                    parent[rootB] = rootA;
-                    rank[rootA]++;
-                }
-            }
+        for (int i = 0; i < size; i++) {
+            root[i] = i;
+            rank[i] = 1;
         }
     }
 
+    public int find(int x) {
+        if (root[x] != x) {
+            root[x] = find(root[x]);
+        }
+
+        return root[x];
+    }
+
+
+    public void union(int a, int b) {
+        int rootA = find(a);
+        int rootB = find(b);
+        if (rootA != rootB) {
+            if (rank[rootA] > rank[rootB]) {
+                root[rootB] = rootA;
+            } else if (rank[rootA] < rank[rootB]) {
+                root[rootA] = rootB;
+            } else {
+                root[rootB] = rootA;
+                rank[rootA]++;
+            }
+        }
+    }
+}
+
+
+public class OptimizeWaterDistributionInAVillage {
+
+
     public int minCostToSupplyWater(int n, int[] wells, int[][] pipes) {
+        FindUnionV3 obj = new FindUnionV3(n + 1); // Include virtual node (0)
+        int cost = 0;
+        //1. prepare edges, assume 0 is virtual node where well at same house
         List<int[]> edges = new ArrayList<>();
 
         // Add virtual node edges (Node 0 to each house)
@@ -175,30 +187,20 @@ public class OptimizeWaterDistributionInAVillage {
             edges.add(new int[]{0, i + 1, wells[i]});
         }
 
-        // Add pipe connections
-        for (int[] pipe : pipes) {
-            edges.add(pipe);
-        }
+        //add pipes in edge
+        edges.addAll(Arrays.asList(pipes));
 
-        // Sort edges based on cost
-        edges.sort((a, b) -> Integer.compare(a[2], b[2]));
+        // sort the edges by cost
+        edges = edges.stream().sorted(Comparator.comparingInt(a -> a[2])).toList();
 
-        // Kruskal's Algorithm
-        UnionFind uf = new UnionFind(n + 1); // Include virtual node (0)
-        int totalCost = 0;
-
-        for (int[] edge : edges) {
-            int u = edge[0];
-            int v = edge[1];
-            int cost = edge[2];
-
-            if (uf.find(u) != uf.find(v)) {
-                uf.union(u, v);
-                totalCost += cost;
+        for(int[] edge: edges) {
+            if (obj.find(edge[0]) != obj.find(edge[1])) {
+                obj.union(edge[0], edge[1]);
+                cost += edge[2];
             }
         }
 
-        return totalCost;
+        return cost;
     }
 
     public static void main(String[] args) {

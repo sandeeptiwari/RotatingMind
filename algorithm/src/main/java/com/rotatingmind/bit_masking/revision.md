@@ -1,21 +1,26 @@
-Bitwise Operators-1
+**Bitwise Operators-1**
+
 A computer understands and stores information only in the form of Bits. Therefore, we have operators that allow us to work on the level of bits, called as Bitwise operators.
 
-Bitwise AND (&) - This operator takes two numbers as operands and does AND for corresponding bits of the two numbers.
+**Bitwise AND (&)** - 
 
-Eg. 5 & 3 = (101)2 & (011)2 = (001)2 = 1
+This operator takes two numbers as operands and does AND for corresponding bits of the two numbers.
 
-b1 & b2 = 1, if b1=b2=1
-= 0, otherwise
+    Eg. 5 & 3 = (101)2 & (011)2 = (001)2 = 1
+    
+    b1 & b2 = 1, if b1=b2=1
+    = 0, otherwise
 
-Bitwise AND of any number x with 0 is 0 itself
-x & 0 = 0
-Bitwise OR (|) - This operator takes two numbers as operands and does OR for corresponding bits of the two numbers.
+* Bitwise AND of any number x with 0 is 0 itself
 
-Eg.  5 | 3 = (101)2 | (011)2 = (111)2 = 7
+    `x & 0 = 0`
 
-b1 | b2 = 1, if b1=1 or b2=1
-= 0, otherwise
+**Bitwise OR (|) -** This operator takes two numbers as operands and does OR for corresponding bits of the two numbers.
+
+    Eg.  5 | 3 = (101)2 | (011)2 = (111)2 = 7
+    
+    b1 | b2 = 1, if b1=1 or b2=1
+    = 0, otherwise
 
 Bitwise OR of any bit with 1 is 1
 b1 | 1 = 1

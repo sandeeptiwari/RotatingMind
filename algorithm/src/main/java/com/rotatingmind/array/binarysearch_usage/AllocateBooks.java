@@ -19,7 +19,7 @@ import java.util.Arrays;
  *
  * e.g. m = 2
  * a == {12, 34, 67, 90}
- * allcation1
+ * allcation-1
  * style 1 : max (1 = 12,  2 = 191) = 191
  * style 2 : max (1 = 46,  2 = 157) = 157
  * style 3 : max (1 = 131, 2 = 90 ) = 113
