@@ -8,7 +8,9 @@
 
 Each level d there are 2 ^ d choices, there are N items so complexity is 2 ^N.
 
-Another way to consider each item as bit then we check for all possible combinations of setting and unsetting, and find maximum value obtained while satisifying weight constraint. It is clear we need to check (1 << n) or 2 ^ N iterations. So, naive solution is 2 ^ N.
+Another way to consider each item as bit then we check for all possible combinations of setting and unsetting, 
+and find maximum value obtained while satisfying weight constraint. It is clear we need to check (1 << n) or 2 ^ N iterations. 
+So, naive solution is 2 ^ N.
 
 
 we have 2 state here of function index and remaining weight;
